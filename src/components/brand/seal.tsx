@@ -7,7 +7,7 @@ export function BrandSeal({ className }: { className?: string }) {
 
   return (
     <div className={className} aria-label="Seljan, made with heart">
-      <svg viewBox="0 0 200 200" className="h-full w-full text-primary">
+      <svg viewBox="0 0 200 200" className="h-full w-full">
         <circle
           cx="100"
           cy="100"
