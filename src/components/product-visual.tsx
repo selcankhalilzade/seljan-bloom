@@ -47,7 +47,7 @@ export function ProductVisual({
       <KnitField slug={product.slug} hex={product.hex} accent={product.accent} />
       <div className="relative flex h-full items-center justify-center">
         {product.category === "charms" ? (
-          <FlowerMark className="size-24 sm:size-28" color={product.accent} />
+          <FlowerMark className="size-24 sm:size-28" />
         ) : (
           <svg viewBox="0 0 128 140" className="h-[58%] w-[58%]" fill="none">
             {product.category === "beanies" ? (

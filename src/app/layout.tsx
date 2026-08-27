@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   description:
     "Seljan is a small studio of handmade knitted accessories: beanies, scarves, and charms, made with heart.",
   icons: {
-    icon: "/flower.svg",
+    icon: "/brand/flower.png",
   },
 };
 

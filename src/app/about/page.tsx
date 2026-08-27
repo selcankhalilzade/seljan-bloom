@@ -40,9 +40,8 @@ export default function AboutPage() {
             </span>
           </div>
         </div>
-        <div className="flex flex-col items-center gap-10">
+        <div className="flex justify-center lg:justify-end">
           <BrandSeal className="size-48 sm:size-56" />
-          <FlowerMark className="size-28 text-primary sm:size-32" />
         </div>
       </div>
     </div>

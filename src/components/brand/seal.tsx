@@ -4,17 +4,10 @@ export function BrandSeal({ className }: { className?: string }) {
   const uid = useId().replace(/:/g, "");
   const topId = `seljan-arc-top-${uid}`;
   const bottomId = `seljan-arc-bottom-${uid}`;
-  const maskId = `seljan-seal-hole-${uid}`;
 
   return (
     <div className={className} aria-label="Seljan, made with heart">
       <svg viewBox="0 0 200 200" className="h-full w-full text-primary">
-        <defs>
-          <mask id={maskId}>
-            <rect x="66" y="66" width="68" height="68" fill="white" />
-            <circle cx="100" cy="100" r="7.8" fill="black" />
-          </mask>
-        </defs>
         <circle
           cx="100"
           cy="100"
@@ -31,16 +24,8 @@ export function BrandSeal({ className }: { className?: string }) {
           stroke="currentColor"
           strokeWidth="0.75"
         />
-        <path
-          id={topId}
-          d="M 38 100 A 62 62 0 0 1 162 100"
-          fill="none"
-        />
-        <path
-          id={bottomId}
-          d="M 162 100 A 62 62 0 0 1 38 100"
-          fill="none"
-        />
+        <path id={topId} d="M 38 100 A 62 62 0 0 1 162 100" fill="none" />
+        <path id={bottomId} d="M 162 100 A 62 62 0 0 1 38 100" fill="none" />
         <text
           fill="currentColor"
           fontSize="11"
@@ -61,14 +46,13 @@ export function BrandSeal({ className }: { className?: string }) {
             MADE WITH HEART
           </textPath>
         </text>
-        <g fill="currentColor" mask={`url(#${maskId})`}>
-          <circle cx="100" cy="84.5" r="14.1" />
-          <circle cx="113.45" cy="92.2" r="14.1" />
-          <circle cx="113.45" cy="107.8" r="14.1" />
-          <circle cx="100" cy="115.5" r="14.1" />
-          <circle cx="86.55" cy="107.8" r="14.1" />
-          <circle cx="86.55" cy="92.2" r="14.1" />
-        </g>
+        <image
+          href="/brand/flower.png"
+          x="58"
+          y="58"
+          width="84"
+          height="84"
+        />
       </svg>
     </div>
   );
