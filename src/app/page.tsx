@@ -94,10 +94,14 @@ export default function HomePage() {
             <FlowerMark className="size-40 sm:size-52 md:size-56" />
           </div>
           <div className="max-w-md space-y-4">
-            <p className="text-center text-[0.65rem] tracking-[0.28em] text-primary uppercase">
-              A small studio
-            </p>
-            <h2 className="font-script text-5xl text-primary">Knit by hand</h2>
+            <div className="mx-auto w-fit text-center">
+              <p className="text-[0.65rem] tracking-[0.28em] text-primary uppercase">
+                A small studio
+              </p>
+              <h2 className="mt-2 font-script text-5xl text-primary">
+                Knit by hand
+              </h2>
+            </div>
             <p className="text-sm leading-relaxed text-primary/75 sm:text-base">
               Every Seljan piece starts as a cone of yarn and a pair of
               needles. There is no factory run — only what can be finished with
