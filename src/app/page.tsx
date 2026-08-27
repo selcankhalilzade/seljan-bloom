@@ -37,7 +37,7 @@ export default function HomePage() {
               "h-11 rounded-full px-6",
             )}
           >
-            The maker
+            About
           </Link>
         </div>
       </section>
