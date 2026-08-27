@@ -98,7 +98,7 @@ export default function HomePage() {
           <div className="flex items-center justify-center">
             <FlowerMark className="animate-flower-float size-36 sm:size-44 md:size-52" />
           </div>
-          <div className="max-w-md space-y-5">
+          <div className="-ml-[5px] max-w-md space-y-5">
             <h2 className="font-display text-5xl italic">
               By hand, on purpose.
             </h2>
