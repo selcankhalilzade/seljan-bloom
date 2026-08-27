@@ -90,13 +90,8 @@ export default function HomePage() {
 
       <section className="border-t border-primary/10 bg-card/60">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:px-6 md:grid-cols-2">
-          <div
-            className="flex aspect-[4/5] max-h-[28rem] items-center justify-center rounded-[1.8rem] border border-dashed border-primary/20 bg-card"
-            aria-label="Studio photo placeholder"
-          >
-            <p className="text-[0.65rem] tracking-[0.28em] text-primary/35 uppercase">
-              Photo later
-            </p>
+          <div className="flex aspect-[4/5] max-h-[28rem] items-center justify-center rounded-[1.8rem] border border-primary/10 bg-card">
+            <FlowerMark className="size-40 sm:size-52 md:size-56" />
           </div>
           <div className="max-w-md space-y-4">
             <p className="text-[0.65rem] tracking-[0.28em] text-primary uppercase">
