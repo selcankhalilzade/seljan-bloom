@@ -3,6 +3,7 @@ import { Menu } from "lucide-react";
 
 import { FlowerMark, Wordmark } from "@/components/brand/marks";
 import { PaletteToggle } from "@/components/palette-toggle";
+import { VibeToggle } from "@/components/vibe-toggle";
 
 const links = [
   { href: "/shop", label: "Shop" },
@@ -30,27 +31,31 @@ export function SiteHeader() {
               {link.label}
             </Link>
           ))}
+          <VibeToggle />
           <PaletteToggle />
         </nav>
 
-        <div className="flex items-center gap-2 md:hidden">
-          <PaletteToggle />
+        <div className="flex items-center gap-3 md:hidden">
+          <VibeToggle />
           <details className="relative">
-          <summary className="flex size-10 list-none cursor-pointer items-center justify-center rounded-full text-primary hover:bg-secondary [&::-webkit-details-marker]:hidden">
-            <Menu className="size-5" />
-            <span className="sr-only">Open menu</span>
-          </summary>
-          <div className="absolute right-0 mt-2 w-44 rounded-2xl border border-primary/15 bg-background p-3 shadow-sm">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="block rounded-lg px-3 py-2 text-sm text-primary hover:bg-secondary"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
+            <summary className="flex size-10 list-none cursor-pointer items-center justify-center rounded-full text-primary hover:bg-secondary [&::-webkit-details-marker]:hidden">
+              <Menu className="size-5" />
+              <span className="sr-only">Open menu</span>
+            </summary>
+            <div className="absolute right-0 mt-2 w-44 rounded-lg border border-primary/15 bg-background p-3 shadow-sm">
+              {links.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block rounded-sm px-3 py-2 text-sm text-primary hover:bg-secondary"
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <div className="mt-2 border-t border-primary/10 pt-2">
+                <PaletteToggle />
+              </div>
+            </div>
           </details>
         </div>
       </div>

@@ -11,7 +11,7 @@ export default function AboutPage() {
       <p className="text-[0.65rem] tracking-[0.28em] text-primary uppercase">
         The studio
       </p>
-      <h1 className="mt-2 font-script text-5xl text-primary sm:text-7xl">
+      <h1 className="mt-3 font-display text-5xl text-primary italic sm:text-7xl">
         Made with heart
       </h1>
 

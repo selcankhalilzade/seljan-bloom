@@ -5,11 +5,11 @@ import { useEffect, useState } from "react";
 const STORAGE_KEY = "seljan-palette";
 
 export function PaletteToggle() {
-  const [inverted, setInverted] = useState(true);
+  const [inverted, setInverted] = useState(false);
 
   useEffect(() => {
     const stored = window.localStorage.getItem(STORAGE_KEY);
-    const next = stored === "cream" ? false : true;
+    const next = stored === "clay";
     setInverted(next);
     document.documentElement.classList.toggle("palette-invert", next);
   }, []);

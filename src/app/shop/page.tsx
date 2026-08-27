@@ -17,23 +17,23 @@ export default async function ShopPage({
 
   return (
     <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-      <p className="text-[0.65rem] tracking-[0.28em] text-primary uppercase">
+      <p className="text-[0.65rem] tracking-[0.28em] text-primary/50 uppercase">
         The studio table
       </p>
-      <h1 className="mt-2 font-script text-5xl text-primary sm:text-6xl">
+      <h1 className="mt-3 font-display text-5xl text-primary italic sm:text-6xl">
         Shop
       </h1>
-      <p className="mt-4 max-w-xl text-sm leading-relaxed text-primary/75 sm:text-base">
-        Handmade accessories in small numbers. Browse, then write to the studio
-        if a piece should be yours — checkout comes later.
+      <p className="mt-4 max-w-xl text-sm leading-relaxed text-primary/65 sm:text-base">
+        Handmade accessories in small numbers. Browse, then write if a piece
+        should be yours — checkout comes later.
       </p>
       <div className="mt-8">
         <ShopFilters active={category} />
       </div>
 
       {pieces.length === 0 ? (
-        <div className="mt-16 rounded-[1.6rem] border border-dashed border-primary/20 px-6 py-16 text-center">
-          <p className="font-script text-4xl text-primary">Nothing here yet</p>
+        <div className="mt-16 border border-dashed border-primary/20 px-6 py-16 text-center">
+          <p className="font-display text-4xl text-primary italic">Nothing here yet</p>
           <p className="mx-auto mt-3 max-w-sm text-sm text-primary/70">
             That shelf is empty for now. Try another category, or ask about a
             custom knit.

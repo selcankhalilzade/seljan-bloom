@@ -14,7 +14,7 @@ export default function ContactPage() {
         <p className="text-[0.65rem] tracking-[0.28em] text-primary uppercase">
           The studio
         </p>
-        <h1 className="mt-2 font-script text-5xl text-primary sm:text-6xl">
+        <h1 className="mt-3 font-display text-5xl text-primary italic sm:text-6xl">
           Write to Seljan
         </h1>
         <p className="mt-4 max-w-sm text-sm leading-relaxed text-primary/75 sm:text-base">
@@ -26,7 +26,7 @@ export default function ContactPage() {
       </div>
       <Suspense
         fallback={
-          <div className="h-80 animate-pulse rounded-[1.6rem] bg-card" />
+          <div className="h-80 animate-pulse bg-card" />
         }
       >
         <ContactForm />

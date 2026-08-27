@@ -24,7 +24,7 @@ export function ShopFilters({ active }: { active?: string }) {
             key={filter.value}
             href={filter.href}
             className={cn(
-              "rounded-full border px-4 py-1.5 text-[0.7rem] tracking-[0.2em] uppercase transition-colors",
+              "border px-4 py-1.5 text-[0.7rem] tracking-[0.2em] uppercase transition-colors rounded-[var(--btn-radius)]",
               isActive
                 ? "border-primary bg-primary text-primary-foreground"
                 : "border-primary/20 text-primary hover:border-primary/40",

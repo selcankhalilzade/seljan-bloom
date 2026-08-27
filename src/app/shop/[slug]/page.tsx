@@ -35,14 +35,14 @@ export default async function ProductPage({
 
   return (
     <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:py-16">
-      <div className="overflow-hidden rounded-[2rem] border border-primary/10">
+      <div className="overflow-hidden border border-primary/10">
         <ProductVisual product={product} className="relative aspect-[4/5] w-full" />
       </div>
       <div className="flex flex-col justify-center">
-        <p className="text-[0.65rem] tracking-[0.28em] text-primary uppercase">
+        <p className="text-[0.65rem] tracking-[0.28em] text-primary/50 uppercase">
           {product.category}
         </p>
-        <h1 className="mt-2 font-script text-5xl text-primary sm:text-6xl">
+        <h1 className="mt-2 font-display text-5xl text-primary italic sm:text-6xl">
           {product.name}
         </h1>
         <div className="mt-4 flex flex-wrap items-center gap-3">
@@ -92,7 +92,7 @@ export default async function ProductPage({
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Link
             href={inquireHref}
-            className={cn(buttonVariants({ size: "lg" }), "h-11 rounded-full px-6")}
+            className={cn(buttonVariants({ size: "lg" }), "h-11 rounded-[var(--btn-radius)] px-8")}
           >
             {product.availability === "sold"
               ? "Ask for a similar knit"
@@ -102,7 +102,7 @@ export default async function ProductPage({
             href="/shop"
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
-              "h-11 rounded-full px-6",
+              "h-11 rounded-[var(--btn-radius)] px-8",
             )}
           >
             Back to shop

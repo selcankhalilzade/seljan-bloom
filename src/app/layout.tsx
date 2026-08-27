@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Great_Vibes, Outfit, Geist_Mono } from "next/font/google";
+import { Great_Vibes, Outfit, Geist_Mono, Instrument_Serif } from "next/font/google";
 
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -14,6 +14,13 @@ const outfit = Outfit({
 const greatVibes = Great_Vibes({
   variable: "--font-great-vibes",
   weight: "400",
+  subsets: ["latin"],
+});
+
+const instrument = Instrument_Serif({
+  variable: "--font-instrument",
+  weight: "400",
+  style: ["normal", "italic"],
   subsets: ["latin"],
 });
 
@@ -42,7 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${outfit.variable} ${greatVibes.variable} ${geistMono.variable} palette-invert h-full antialiased`}
+      className={`${outfit.variable} ${greatVibes.variable} ${instrument.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">
         <SiteHeader />

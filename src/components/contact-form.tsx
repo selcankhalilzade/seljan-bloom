@@ -42,8 +42,8 @@ export function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div className="rounded-[1.6rem] border border-primary/15 bg-card px-6 py-10 text-center">
-        <p className="font-script text-4xl text-primary">Thank you</p>
+      <div className="border border-primary/15 bg-card px-6 py-10 text-center">
+        <p className="font-display text-4xl text-primary italic">Thank you</p>
         <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-primary/75">
           Your note is with the studio. Seljan will write back about the piece,
           timing, and how to claim it.
@@ -92,7 +92,7 @@ export function ContactForm() {
           The note did not send. Please try again in a moment.
         </p>
       ) : null}
-      <Button type="submit" size="lg" className="h-11 w-full rounded-full px-6" disabled={status === "sending"}>
+      <Button type="submit" size="lg" className="h-11 w-full rounded-[var(--btn-radius)] px-6" disabled={status === "sending"}>
         {status === "sending" ? "Sending…" : "Send to the studio"}
       </Button>
     </form>
