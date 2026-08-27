@@ -189,11 +189,11 @@ export function featuredProducts() {
 
 export const categoryCopy: Record<Category, { title: string; line: string }> = {
   beanies: {
-    title: "Beanies",
+    title: "Bloom Beanie",
     line: "Ribbed brims, soft crowns, made to sit through a whole winter.",
   },
   scarves: {
-    title: "Scarves",
+    title: "Ribbon Scarf",
     line: "Long ribs, light wraps, and one with a hidden pocket.",
   },
   charms: {
