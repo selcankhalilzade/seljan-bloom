@@ -52,6 +52,7 @@ export default function RootLayout({
       className={`${outfit.variable} ${greatVibes.variable} ${instrument.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">
+        <div className="site-grain" aria-hidden />
         <SiteHeader />
         <main className="flex flex-1 flex-col">{children}</main>
         <SiteFooter />

@@ -187,3 +187,112 @@
     font-style: normal;
   }
 }
+
+body {
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      color-mix(in oklab, var(--primary) 7%, transparent) 0 1px,
+      transparent 1px 10px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--primary) 5%, transparent) 0 1px,
+      transparent 1px 8px
+    );
+  background-size: 100% 10px, 8px 100%;
+}
+
+.site-grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  opacity: 0.18;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain-shift 1.2s steps(3) infinite;
+}
+
+.palette-invert .site-grain {
+  mix-blend-mode: overlay;
+  opacity: 0.22;
+}
+
+@keyframes grain-shift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(-1.5%, 1%);
+  }
+  66% {
+    transform: translate(1%, -1.2%);
+  }
+}
+
+@keyframes flower-turn {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes flower-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes marquee-shift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-flower-turn {
+  animation: flower-turn 36s linear infinite;
+}
+
+.animate-flower-float {
+  animation: flower-float 5.5s ease-in-out infinite;
+}
+
+.animate-marquee {
+  animation: marquee-shift 32s linear infinite;
+}
+
+.animate-rise {
+  animation: rise-in 0.9s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-grain,
+  .animate-flower-turn,
+  .animate-flower-float,
+  .animate-marquee,
+  .animate-rise {
+    animation: none;
+  }
+}

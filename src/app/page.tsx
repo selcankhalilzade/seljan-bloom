@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { FlowerMark, Wordmark } from "@/components/brand/marks";
+import { KnitTicker } from "@/components/knit-ticker";
 import { ProductCard } from "@/components/product-card";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -14,9 +15,9 @@ export default function HomePage() {
   return (
     <div>
       <section className="mx-auto flex max-w-6xl flex-col px-4 py-16 sm:px-6 sm:py-24 md:flex-row md:items-end md:justify-between md:gap-16">
-        <div className="max-w-xl">
+        <div className="animate-rise max-w-xl">
           <div className="mb-8 flex items-center gap-3 text-primary">
-            <FlowerMark className="size-10 sm:size-12" />
+            <FlowerMark className="animate-flower-turn size-10 sm:size-12" />
             <Wordmark className="text-5xl sm:text-6xl" />
           </div>
           <h1 className="font-display text-5xl leading-[1.05] text-primary italic sm:text-6xl md:text-7xl">
@@ -45,6 +46,8 @@ export default function HomePage() {
         </p>
       </section>
 
+      <KnitTicker />
+
       <section className="mx-auto grid max-w-6xl gap-0 border-t border-primary/15 px-4 sm:grid-cols-3 sm:px-6">
         {(
           [
@@ -56,12 +59,12 @@ export default function HomePage() {
           <Link
             key={slug}
             href={`/shop?category=${slug}`}
-            className="border-primary/15 px-0 py-10 text-left transition-opacity hover:opacity-70 sm:border-l sm:px-8 sm:first:border-l-0"
+            className="group border-primary/15 px-0 py-10 text-left transition-colors hover:bg-primary/[0.03] sm:border-l sm:px-8 sm:first:border-l-0"
           >
             <p className="text-[0.65rem] tracking-[0.28em] text-primary/40 uppercase">
               {index}
             </p>
-            <h2 className="mt-4 font-display text-3xl text-primary italic">
+            <h2 className="mt-4 font-display text-3xl text-primary italic transition-transform duration-500 group-hover:translate-x-1">
               {copy.title}
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-primary/60">
@@ -93,7 +96,7 @@ export default function HomePage() {
       <section className="border-t border-primary/15">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 sm:px-6 md:grid-cols-2">
           <div className="flex items-center justify-center">
-            <FlowerMark className="size-36 sm:size-44 md:size-52" />
+            <FlowerMark className="animate-flower-float size-36 sm:size-44 md:size-52" />
           </div>
           <div className="max-w-md space-y-5">
             <h2 className="font-display text-5xl text-primary italic">

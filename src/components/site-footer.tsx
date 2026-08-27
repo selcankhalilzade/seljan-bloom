@@ -10,7 +10,7 @@ export function SiteFooter() {
         <div className="space-y-3 text-primary">
           <div className="flex items-center gap-2">
             <Wordmark className="text-3xl" />
-            <FlowerMark className="size-7" />
+            <FlowerMark className="size-7 animate-flower-turn" />
           </div>
           <div className="space-y-1.5 text-sm text-primary/75">
             <p>Email:</p>

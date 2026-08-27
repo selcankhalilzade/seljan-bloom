@@ -13,7 +13,7 @@ function availabilityLabel(product: Product) {
 export function ProductCard({ product }: { product: Product }) {
   return (
     <Link href={`/shop/${product.slug}`} className="group block">
-      <div className="overflow-hidden border border-primary/10 bg-card">
+      <div className="overflow-hidden border border-primary/10 bg-card transition-transform duration-500 ease-out group-hover:-translate-y-1">
         <div className="relative aspect-[4/5]">
           <ProductVisual product={product} className="absolute inset-0" />
           <Badge className="absolute top-3 left-3 rounded-none bg-background/90 text-primary hover:bg-background/90">

@@ -35,7 +35,7 @@ export default async function ProductPage({
 
   return (
     <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:py-16">
-      <div className="overflow-hidden border border-primary/10">
+      <div className="group overflow-hidden border border-primary/10">
         <ProductVisual product={product} className="relative aspect-[4/5] w-full" />
       </div>
       <div className="flex flex-col justify-center">

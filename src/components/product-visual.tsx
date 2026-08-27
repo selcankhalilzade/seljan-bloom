@@ -15,19 +15,20 @@ function KnitField({ slug, hex, accent }: { slug: string; hex: string; accent: s
         >
           <rect width="12" height="12" fill={hex} />
           <path
-            d="M0 6 Q3 2 6 6 T12 6"
+            d="M0 6 Q3 1.5 6 6 T12 6"
             fill="none"
             stroke={accent}
-            strokeWidth="1.1"
-            opacity="0.55"
+            strokeWidth="1.35"
+            opacity="0.7"
           />
           <path
-            d="M0 0 Q3 4 6 0"
+            d="M0 0 Q3 4.5 6 0"
             fill="none"
             stroke={accent}
-            strokeWidth="1.1"
-            opacity="0.35"
+            strokeWidth="1.2"
+            opacity="0.45"
           />
+          <circle cx="6" cy="6" r="0.7" fill={accent} opacity="0.35" />
         </pattern>
       </defs>
       <rect width="100%" height="100%" fill={`url(#${patternId})`} />
@@ -43,9 +44,12 @@ export function ProductVisual({
   className?: string;
 }) {
   return (
-    <div className={className} style={{ backgroundColor: product.hex }}>
+    <div
+      className={`${className ?? ""} overflow-hidden`}
+      style={{ backgroundColor: product.hex }}
+    >
       <KnitField slug={product.slug} hex={product.hex} accent={product.accent} />
-      <div className="relative flex h-full items-center justify-center">
+      <div className="relative flex h-full items-center justify-center transition-transform duration-700 ease-out group-hover:scale-110">
         {product.category === "charms" ? (
           <FlowerMark className="size-24 sm:size-28" />
         ) : (
