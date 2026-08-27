@@ -94,7 +94,7 @@ export default function HomePage() {
             <FlowerMark className="size-40 sm:size-52 md:size-56" />
           </div>
           <div className="max-w-md space-y-4">
-            <p className="text-[0.65rem] tracking-[0.28em] text-primary uppercase">
+            <p className="text-center text-[0.65rem] tracking-[0.28em] text-primary uppercase">
               A small studio
             </p>
             <h2 className="font-script text-5xl text-primary">Knit by hand</h2>
