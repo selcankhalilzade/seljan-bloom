@@ -42,6 +42,8 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-band: var(--band);
+  --color-band-foreground: var(--band-foreground);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -85,6 +87,8 @@
   --sidebar-accent-foreground: #1c1412;
   --sidebar-border: #d8cfc6;
   --sidebar-ring: #6e2c28;
+  --band: #6e2c28;
+  --band-foreground: #f6f1eb;
 }
 
 .palette-invert {
@@ -114,6 +118,8 @@
   --sidebar-accent-foreground: #f6f1eb;
   --sidebar-border: #4a3c38;
   --sidebar-ring: #f6f1eb;
+  --band: #6e2c28;
+  --band-foreground: #f6f1eb;
 }
 
 .vibe-studio {
@@ -146,6 +152,8 @@
   --sidebar-accent-foreground: #7a3530;
   --sidebar-border: #e0c3ae;
   --sidebar-ring: #8f3a36;
+  --band: #8f3a36;
+  --band-foreground: #faf1e6;
 }
 
 .vibe-studio.palette-invert {
@@ -180,7 +188,8 @@
     @apply bg-background text-foreground;
   }
   .palette-invert img[src="/brand/flower.png"],
-  .palette-invert image[href="/brand/flower.png"] {
+  .palette-invert image[href="/brand/flower.png"],
+  .band-oxblood img[src="/brand/flower.png"] {
     filter: brightness(0) invert(0.94);
   }
   .vibe-studio .font-display {
