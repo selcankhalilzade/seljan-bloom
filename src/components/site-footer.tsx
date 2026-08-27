@@ -12,6 +12,11 @@ export function SiteFooter() {
             <Wordmark className="text-3xl" />
             <FlowerMark className="size-7" />
           </div>
+          <div className="space-y-1.5 text-sm text-primary/75">
+            <p>Email:</p>
+            <p>Instagram:</p>
+            <p>TikTok:</p>
+          </div>
         </div>
         <div className="space-y-3 text-sm">
           <p className="text-[0.65rem] tracking-[0.28em] text-primary uppercase">
