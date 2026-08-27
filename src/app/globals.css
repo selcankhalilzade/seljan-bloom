@@ -3,6 +3,7 @@
 @import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
+@custom-variant palette-invert (&:where(.palette-invert, .palette-invert *));
 
 @theme inline {
   --color-background: var(--background);
@@ -84,6 +85,40 @@
   --sidebar-ring: #8f3a36;
 }
 
+.palette-invert {
+  --background: #8f3a36;
+  --foreground: #f4dcc8;
+  --card: #7a3530;
+  --card-foreground: #f4dcc8;
+  --popover: #7a3530;
+  --popover-foreground: #f4dcc8;
+  --primary: #f4dcc8;
+  --primary-foreground: #8f3a36;
+  --secondary: #a24a3e;
+  --secondary-foreground: #f4dcc8;
+  --muted: #7a3530;
+  --muted-foreground: #ead0ba;
+  --accent: #a24a3e;
+  --accent-foreground: #f4dcc8;
+  --destructive: #ffd4c8;
+  --border: #c9896a;
+  --input: #c9896a;
+  --ring: #f4dcc8;
+  --chart-1: #f4dcc8;
+  --chart-2: #ead0ba;
+  --chart-3: #c9896a;
+  --chart-4: #faf1e6;
+  --chart-5: #e6d3b8;
+  --sidebar: #7a3530;
+  --sidebar-foreground: #f4dcc8;
+  --sidebar-primary: #f4dcc8;
+  --sidebar-primary-foreground: #8f3a36;
+  --sidebar-accent: #a24a3e;
+  --sidebar-accent-foreground: #f4dcc8;
+  --sidebar-border: #c9896a;
+  --sidebar-ring: #f4dcc8;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -94,5 +129,9 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  .palette-invert img[src="/brand/flower.png"],
+  .palette-invert image[href="/brand/flower.png"] {
+    filter: brightness(0) invert(0.94);
   }
 }

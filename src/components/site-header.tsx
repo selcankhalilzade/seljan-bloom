@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 
 import { FlowerMark, Wordmark } from "@/components/brand/marks";
+import { PaletteToggle } from "@/components/palette-toggle";
 
 const links = [
   { href: "/shop", label: "Shop" },
@@ -29,9 +30,12 @@ export function SiteHeader() {
               {link.label}
             </Link>
           ))}
+          <PaletteToggle />
         </nav>
 
-        <details className="relative md:hidden">
+        <div className="flex items-center gap-2 md:hidden">
+          <PaletteToggle />
+          <details className="relative">
           <summary className="flex size-10 list-none cursor-pointer items-center justify-center rounded-full text-primary hover:bg-secondary [&::-webkit-details-marker]:hidden">
             <Menu className="size-5" />
             <span className="sr-only">Open menu</span>
@@ -47,7 +51,8 @@ export function SiteHeader() {
               </Link>
             ))}
           </div>
-        </details>
+          </details>
+        </div>
       </div>
     </header>
   );

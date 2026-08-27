@@ -42,7 +42,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${outfit.variable} ${greatVibes.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${outfit.variable} ${greatVibes.variable} ${geistMono.variable} palette-invert h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">
         <SiteHeader />
