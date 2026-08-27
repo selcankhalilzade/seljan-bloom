@@ -18,7 +18,7 @@ export function SiteFooter() {
             <p>TikTok:</p>
           </div>
         </div>
-        <div className="space-y-3 text-sm">
+        <div className="mt-[2px] space-y-3 text-sm">
           <p className="text-[0.65rem] tracking-[0.28em] text-primary uppercase">
             Visit
           </p>
