@@ -12,10 +12,6 @@ export function SiteFooter() {
             <Wordmark className="text-3xl" />
             <FlowerMark className="size-7" />
           </div>
-          <p className="max-w-sm text-sm leading-relaxed text-primary/75">
-            Handmade knitted accessories, made slowly in small batches. Beanies,
-            scarves, and charms — made with heart.
-          </p>
         </div>
         <div className="space-y-3 text-sm">
           <p className="text-[0.65rem] tracking-[0.28em] text-primary uppercase">
