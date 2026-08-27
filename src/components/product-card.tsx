@@ -13,24 +13,26 @@ function availabilityLabel(product: Product) {
 export function ProductCard({ product }: { product: Product }) {
   return (
     <Link href={`/shop/${product.slug}`} className="group block">
-      <div className="overflow-hidden border border-primary/10 bg-card transition-transform duration-500 ease-out group-hover:-translate-y-1">
-        <div className="relative aspect-[4/5]">
+      <div className="transition-transform duration-500 ease-out group-hover:-translate-y-1">
+        <div className="relative aspect-[4/5] overflow-hidden">
           <ProductVisual product={product} className="absolute inset-0" />
           <Badge className="absolute top-3 left-3 rounded-none bg-background/90 text-primary hover:bg-background/90">
             {availabilityLabel(product)}
           </Badge>
         </div>
-        <div className="space-y-1 px-0 py-4">
-          <p className="text-[0.65rem] tracking-[0.22em] text-primary/45 uppercase">
+        <div className="flex flex-col gap-3 pt-4">
+          <p className="text-[0.65rem] tracking-[0.24em] text-primary/40 uppercase">
             {product.category}
           </p>
-          <div className="flex items-baseline justify-between gap-3">
-            <h3 className="font-display text-xl text-primary italic group-hover:opacity-70">
-              {product.name}
-            </h3>
-            <p className="text-sm text-primary/70">{formatPrice(product.price)}</p>
+          <h3 className="font-display text-[1.35rem] leading-snug text-primary italic transition-opacity group-hover:opacity-70">
+            {product.name}
+          </h3>
+          <div className="flex items-baseline justify-between gap-4 text-sm">
+            <p className="text-primary/55">{product.colorName}</p>
+            <p className="shrink-0 tabular-nums tracking-wide text-primary">
+              {formatPrice(product.price)}
+            </p>
           </div>
-          <p className="text-sm text-primary/55">{product.colorName}</p>
         </div>
       </div>
     </Link>
