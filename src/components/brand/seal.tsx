@@ -11,8 +11,8 @@ export function BrandSeal({ className }: { className?: string }) {
       <svg viewBox="0 0 200 200" className="h-full w-full text-primary">
         <defs>
           <mask id={maskId}>
-            <rect x="70" y="70" width="60" height="60" fill="white" />
-            <circle cx="100" cy="100" r="6.5" fill="black" />
+            <rect x="66" y="66" width="68" height="68" fill="white" />
+            <circle cx="100" cy="100" r="7.8" fill="black" />
           </mask>
         </defs>
         <circle
@@ -62,12 +62,12 @@ export function BrandSeal({ className }: { className?: string }) {
           </textPath>
         </text>
         <g fill="currentColor" mask={`url(#${maskId})`}>
-          <circle cx="100" cy="87" r="12" />
-          <circle cx="111.43" cy="93.5" r="12" />
-          <circle cx="111.43" cy="106.5" r="12" />
-          <circle cx="100" cy="113" r="12" />
-          <circle cx="88.57" cy="106.5" r="12" />
-          <circle cx="88.57" cy="93.5" r="12" />
+          <circle cx="100" cy="84.5" r="14.1" />
+          <circle cx="113.45" cy="92.2" r="14.1" />
+          <circle cx="113.45" cy="107.8" r="14.1" />
+          <circle cx="100" cy="115.5" r="14.1" />
+          <circle cx="86.55" cy="107.8" r="14.1" />
+          <circle cx="86.55" cy="92.2" r="14.1" />
         </g>
       </svg>
     </div>

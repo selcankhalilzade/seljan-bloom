@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import { FlowerMark, Wordmark } from "@/components/brand/marks";
@@ -91,13 +90,9 @@ export default function HomePage() {
 
       <section className="border-t border-primary/10 bg-card/60">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:px-6 md:grid-cols-2">
-          <div className="relative overflow-hidden rounded-[1.8rem] border border-primary/10">
-            <Image
-              src="/brand/identity.png"
-              alt="Seljan identity: script wordmark, six-petal flower, and made with heart seal"
-              width={1200}
-              height={700}
-              className="h-auto w-full"
+          <div className="flex aspect-square max-h-[28rem] items-center justify-center rounded-[1.8rem] border border-primary/10 bg-card">
+            <FlowerMark
+              className="size-40 text-primary sm:size-52 md:size-60"
             />
           </div>
           <div className="max-w-md space-y-4">

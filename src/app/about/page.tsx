@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import { BrandSeal } from "@/components/brand/seal";
 import { FlowerMark } from "@/components/brand/marks";
 
@@ -42,17 +40,9 @@ export default function AboutPage() {
             </span>
           </div>
         </div>
-        <div className="flex flex-col items-center gap-8">
+        <div className="flex flex-col items-center gap-10">
           <BrandSeal className="size-48 sm:size-56" />
-          <div className="overflow-hidden rounded-[1.8rem] border border-primary/10">
-            <Image
-              src="/brand/identity.png"
-              alt="Seljan brand marks: wordmark, circular seal, stacked logo, and S flower icon"
-              width={1200}
-              height={700}
-              className="h-auto w-full"
-            />
-          </div>
+          <FlowerMark className="size-28 text-primary sm:size-32" />
         </div>
       </div>
     </div>
