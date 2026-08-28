@@ -56,9 +56,9 @@ export function ComingSoonView() {
               By hand, on purpose.
             </h2>
             <p className="text-sm leading-relaxed text-primary/70 sm:text-base">
-              No factory run. Cones of merino, leftover blush, terracotta that
-              matches the flower. When the table opens, pieces will be small
-              batches — the knit that does the outfit.
+              No factory runs. Just knit and crochet accessories made slowly,
+              in small batches, with care. Thoughtful colors, soft textures,
+              and pieces made to be worn again and again.
             </p>
           </div>
         </div>
