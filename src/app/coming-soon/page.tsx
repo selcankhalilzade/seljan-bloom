@@ -24,8 +24,9 @@ export default function ComingSoonPage() {
             Coming soon.
           </h1>
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-primary/70 sm:text-base">
-            The studio table is not open yet. Bloom Beanie, Ribbon Scarf, Petal
-            Headband, and charms — knit slowly, then worn constantly.
+            The studio table is not open yet. Made slowly, meant to stay. The
+            Bloom Collection, a world of knit and crochet accessories, is
+            coming soon.
           </p>
           <WaitlistForm />
         </div>
