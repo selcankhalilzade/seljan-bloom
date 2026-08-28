@@ -331,13 +331,134 @@ body {
   animation: rise-in 0.9s ease-out both;
 }
 
+.knit-needle {
+  transform-box: fill-box;
+}
+
+.knit-needle-a {
+  transform-origin: 100% 100%;
+  animation: knit-needle-a 1.15s ease-in-out infinite;
+}
+
+.knit-needle-b {
+  transform-origin: 0% 100%;
+  animation: knit-needle-b 1.15s ease-in-out infinite;
+}
+
+.knit-yarn-loop {
+  transform-origin: 100px 82px;
+  animation: knit-yarn 1.15s ease-in-out infinite;
+}
+
+.scarf-knit {
+  background-color: currentColor;
+  background-image:
+    repeating-linear-gradient(
+      180deg,
+      color-mix(in oklab, white 16%, transparent) 0 1px,
+      transparent 1px 8px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in oklab, black 18%, transparent) 0 1px,
+      transparent 1px 6px
+    );
+}
+
+.scarf-length {
+  height: 2.75rem;
+  border-radius: 0.2rem 0.2rem 0.7rem 0.7rem;
+  animation: scarf-grow 16s ease-in-out infinite;
+}
+
+.scarf-fold {
+  opacity: 0;
+  animation: scarf-fold-in 16s ease-in-out infinite;
+  box-shadow: 0 2px 0 color-mix(in oklab, black 18%, transparent);
+}
+
+@keyframes knit-needle-a {
+  0%,
+  100% {
+    transform: rotate(-7deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes knit-needle-b {
+  0%,
+  100% {
+    transform: rotate(7deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes knit-yarn {
+  0%,
+  100% {
+    transform: scaleY(1) translateY(0);
+  }
+  50% {
+    transform: scaleY(1.18) translateY(2px);
+  }
+}
+
+@keyframes scarf-grow {
+  0% {
+    height: 2.4rem;
+  }
+  58% {
+    height: 11.5rem;
+  }
+  86% {
+    height: 11.5rem;
+  }
+  100% {
+    height: 2.4rem;
+  }
+}
+
+@keyframes scarf-fold-in {
+  0%,
+  28% {
+    opacity: 0;
+    transform: translate(-50%, -10px) scale(0.55);
+  }
+  48%,
+  86% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 8px) scale(0.7);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .site-grain,
   .animate-flower-turn,
   .animate-flower-float,
   .animate-marquee,
   .animate-rise,
-  .flower-fall {
+  .flower-fall,
+  .knit-needle-a,
+  .knit-needle-b,
+  .knit-yarn-loop,
+  .scarf-length,
+  .scarf-fold {
     animation: none;
+  }
+
+  .scarf-length {
+    height: 11.5rem;
+  }
+
+  .scarf-fold {
+    opacity: 1;
   }
 }
