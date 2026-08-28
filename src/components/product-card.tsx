@@ -20,19 +20,16 @@ export function ProductCard({ product }: { product: Product }) {
             {availabilityLabel(product)}
           </Badge>
         </div>
-        <div className="flex flex-col gap-3 pt-4">
-          <p className="text-[0.65rem] tracking-[0.24em] text-primary/40 uppercase">
-            {product.category}
-          </p>
-          <h3 className="font-display text-[1.35rem] leading-snug text-primary italic transition-opacity group-hover:opacity-70">
-            {product.name}
-          </h3>
-          <div className="flex items-baseline justify-between gap-4 text-sm">
-            <p className="text-primary/55">{product.colorName}</p>
-            <p className="shrink-0 tabular-nums tracking-wide text-primary">
-              {formatPrice(product.price)}
-            </p>
+        <div className="flex items-start justify-between gap-6 pt-3">
+          <div className="min-w-0">
+            <h3 className="font-display text-xl leading-tight text-primary italic transition-opacity group-hover:opacity-70">
+              {product.name}
+            </h3>
+            <p className="mt-1 text-sm text-primary/50">{product.colorName}</p>
           </div>
+          <p className="shrink-0 pt-0.5 text-sm tabular-nums text-primary/80">
+            {formatPrice(product.price)}
+          </p>
         </div>
       </div>
     </Link>
