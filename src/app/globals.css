@@ -187,12 +187,11 @@
   body {
     @apply bg-background text-foreground;
   }
-  .palette-invert img[src="/brand/flower.png"],
-  .palette-invert image[href="/brand/flower.png"],
   .band-oxblood img[src="/brand/flower.png"],
   .band-oxblood image[href="/brand/flower.png"] {
     filter: brightness(0) invert(0.94);
   }
+  .palette-invert .story-checkered img[src="/brand/flower.png"],
   .palette-invert footer.band-oxblood img[src="/brand/flower.png"],
   .palette-invert footer.band-oxblood image[href="/brand/flower.png"] {
     filter: none;
@@ -228,9 +227,22 @@ body {
   animation: grain-shift 1.2s steps(3) infinite;
 }
 
-.palette-invert .site-grain {
-  mix-blend-mode: overlay;
-  opacity: 0.22;
+.palette-invert .story-checkered {
+  background-color: var(--background);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      color-mix(in oklab, var(--primary) 7%, transparent) 0 1px,
+      transparent 1px 10px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--primary) 5%, transparent) 0 1px,
+      transparent 1px 8px
+    );
+  background-size: 100% 10px, 8px 100%;
+  color: var(--foreground);
+  border-color: color-mix(in oklab, var(--foreground) 28%, transparent);
 }
 
 @keyframes grain-shift {

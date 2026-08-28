@@ -13,7 +13,7 @@ const social = ["Email", "Instagram", "TikTok"];
 
 export function SiteFooter() {
   return (
-    <footer className="band-oxblood mt-auto bg-band text-band-foreground palette-invert:bg-foreground palette-invert:text-band">
+    <footer className="band-oxblood mt-auto bg-band text-band-foreground palette-invert:bg-foreground palette-invert:text-background">
       <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-10 sm:px-6 md:flex-row md:items-center md:justify-between md:gap-8">
         <div className="flex items-center gap-3">
           <Wordmark className="text-3xl" />

@@ -93,7 +93,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="band-oxblood border-y border-band-foreground/45 bg-band text-band-foreground">
+      <section className="story-checkered band-oxblood border-y border-band-foreground/45 bg-band text-band-foreground">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 sm:px-6 md:grid-cols-2">
           <div className="flex items-center justify-center">
             <FlowerMark className="animate-flower-float size-36 sm:size-44 md:size-52" />
@@ -102,7 +102,7 @@ export default function HomePage() {
             <h2 className="font-display text-5xl italic">
               By hand, on purpose.
             </h2>
-            <p className="text-sm leading-relaxed text-band-foreground/80 sm:text-base">
+            <p className="text-sm leading-relaxed text-band-foreground/80 palette-invert:text-foreground/75 sm:text-base">
               No factory run. Cones of merino, leftover blush, terracotta that
               matches the flower. If a piece is gone, a similar one can usually
               be knit.
