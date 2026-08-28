@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Great_Vibes, Outfit, Geist_Mono, Instrument_Serif } from "next/font/google";
 
+import { FlowerRainProvider } from "@/components/flower-rain";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
@@ -52,10 +53,12 @@ export default function RootLayout({
       className={`${outfit.variable} ${greatVibes.variable} ${instrument.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">
-        <div className="site-grain" aria-hidden />
-        <SiteHeader />
-        <main className="flex flex-1 flex-col">{children}</main>
-        <SiteFooter />
+        <FlowerRainProvider>
+          <div className="site-grain" aria-hidden />
+          <SiteHeader />
+          <main className="flex flex-1 flex-col">{children}</main>
+          <SiteFooter />
+        </FlowerRainProvider>
       </body>
     </html>
   );

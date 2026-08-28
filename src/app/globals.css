@@ -277,6 +277,27 @@ body {
   }
 }
 
+@keyframes flower-fall {
+  0% {
+    transform: translate3d(-50%, -12vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate3d(calc(-50% + var(--flower-drift, 0px)), 108vh, 0)
+      rotate(var(--flower-spin, 180deg));
+    opacity: 0.35;
+  }
+}
+
+.flower-fall {
+  animation-name: flower-fall;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
 @keyframes marquee-shift {
   from {
     transform: translateX(0);
@@ -318,7 +339,8 @@ body {
   .animate-flower-turn,
   .animate-flower-float,
   .animate-marquee,
-  .animate-rise {
+  .animate-rise,
+  .flower-fall {
     animation: none;
   }
 }

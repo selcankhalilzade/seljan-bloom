@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Menu } from "lucide-react";
 
-import { FlowerMark, Wordmark } from "@/components/brand/marks";
+import { Wordmark } from "@/components/brand/marks";
+import { BloomFlower } from "@/components/flower-rain";
 import { PaletteToggle } from "@/components/palette-toggle";
 import { VibeToggle } from "@/components/vibe-toggle";
 
@@ -15,11 +16,13 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-primary/10 bg-background/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-        <Link href="/" className="flex items-center gap-2 text-primary">
-          <FlowerMark className="size-9 animate-flower-turn sm:size-10" />
-          <Wordmark className="text-[2rem] sm:text-[2.15rem]" />
-          <span className="sr-only">Seljan home</span>
-        </Link>
+        <div className="flex items-center gap-2 text-primary">
+          <BloomFlower className="size-9 animate-flower-turn sm:size-10" />
+          <Link href="/" className="flex items-center">
+            <Wordmark className="text-[2rem] sm:text-[2.15rem]" />
+            <span className="sr-only">Seljan home</span>
+          </Link>
+        </div>
 
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((link) => (

@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { FlowerMark, Wordmark } from "@/components/brand/marks";
+import { BloomFlower } from "@/components/flower-rain";
 import { KnitTicker } from "@/components/knit-ticker";
 import { ProductCard } from "@/components/product-card";
 import { buttonVariants } from "@/components/ui/button";
@@ -17,7 +18,7 @@ export default function HomePage() {
       <section className="mx-auto flex max-w-6xl flex-col px-4 py-16 sm:px-6 sm:py-24 md:flex-row md:items-end md:justify-between md:gap-16">
         <div className="animate-rise max-w-xl">
           <div className="mb-8 flex items-center gap-3 text-primary">
-            <FlowerMark className="animate-flower-turn size-10 sm:size-12" />
+            <BloomFlower className="animate-flower-turn size-10 sm:size-12" />
             <Wordmark className="text-5xl sm:text-6xl" />
           </div>
           <h1 className="font-display text-5xl leading-[1.05] text-primary italic sm:text-6xl md:text-7xl">
