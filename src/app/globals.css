@@ -279,23 +279,85 @@ body {
 
 @keyframes flower-fall {
   0% {
-    transform: translate3d(-50%, -12vh, 0) rotate(0deg);
+    transform: translate3d(var(--flower-x), -14vh, 0);
     opacity: 0;
   }
-  8% {
-    opacity: 0.95;
+  6% {
+    opacity: var(--flower-opacity, 1);
+  }
+  24% {
+    transform: translate3d(
+      calc(var(--flower-x) + var(--sway-1, 0px)),
+      20vh,
+      0
+    );
+  }
+  52% {
+    transform: translate3d(
+      calc(var(--flower-x) + var(--sway-2, 0px)),
+      52vh,
+      0
+    );
+  }
+  76% {
+    transform: translate3d(
+      calc(var(--flower-x) + var(--sway-3, 0px)),
+      80vh,
+      0
+    );
   }
   100% {
-    transform: translate3d(calc(-50% + var(--flower-drift, 0px)), 108vh, 0)
-      rotate(var(--flower-spin, 180deg));
-    opacity: 0.35;
+    transform: translate3d(
+      calc(var(--flower-x) + var(--sway-4, 0px)),
+      114vh,
+      0
+    );
+    opacity: 0;
+  }
+}
+
+@keyframes flower-tumble {
+  from {
+    transform: rotate(0deg) rotateY(0deg) scale(0.82);
+  }
+  18% {
+    transform: rotate(calc(var(--flower-spin, 180deg) * 0.18))
+      rotateY(var(--flower-flip, 40deg)) scale(1.05);
+  }
+  to {
+    transform: rotate(var(--flower-spin, 180deg))
+      rotateY(calc(var(--flower-flip, 40deg) * -1)) scale(0.9);
+  }
+}
+
+@keyframes flower-pop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.18) rotate(-10deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
   }
 }
 
 .flower-fall {
   animation-name: flower-fall;
+  animation-timing-function: cubic-bezier(0.28, 0.08, 0.42, 0.96);
+  animation-fill-mode: forwards;
+  will-change: transform, opacity;
+}
+
+.flower-tumble {
+  animation-name: flower-tumble;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
+  will-change: transform;
+}
+
+.animate-flower-pop {
+  animation: flower-pop 0.5s ease-out;
 }
 
 @keyframes marquee-shift {
@@ -340,7 +402,9 @@ body {
   .animate-flower-float,
   .animate-marquee,
   .animate-rise,
-  .flower-fall {
+  .flower-fall,
+  .flower-tumble,
+  .animate-flower-pop {
     animation: none;
   }
 }
