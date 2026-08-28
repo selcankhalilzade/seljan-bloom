@@ -7,7 +7,6 @@ import { FlowerMark, Wordmark } from "@/components/brand/marks";
 import { BrandSeal } from "@/components/brand/seal";
 
 const visit = [
-  { href: "/shop", label: "Shop" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -15,7 +14,8 @@ const visit = [
 const social = ["Email", "Instagram", "TikTok"];
 
 export function SiteFooter() {
-  const comingSoon = usePathname() === "/coming-soon";
+  const comingSoon =
+    usePathname() === "/" || usePathname() === "/coming-soon";
 
   return (
     <footer className="band-oxblood mt-auto bg-band text-band-foreground palette-invert:bg-foreground palette-invert:text-background">

@@ -1,8 +1,6 @@
 # Seljan
 
-A boutique browse site for **Seljan**, a handmade knit studio of beanies, scarves, and charms. The six-petal flower and peach-and-terracotta palette come from the brand board. There is no checkout yet — visitors browse the studio table and write to ask about a piece.
-
-A matching **coming soon** page lives at `/coming-soon` (email waitlist, no shop rail).
+A boutique browse site for **Seljan**, a handmade knit studio of beanies, scarves, and charms. The public homepage is a **coming soon** waitlist. The catalog still lives at `/shop` if you need it privately.
 
 ## Run locally
 

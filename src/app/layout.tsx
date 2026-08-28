@@ -32,11 +32,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Seljan — handmade knitted accessories",
+    default: "Seljan — coming soon",
     template: "%s · Seljan",
   },
   description:
-    "Seljan is a small studio of handmade knitted accessories: beanies, scarves, and charms, made with heart.",
+    "Seljan is a small studio of handmade knitted accessories. The table is not open yet.",
   icons: {
     icon: "/brand/flower.png",
   },

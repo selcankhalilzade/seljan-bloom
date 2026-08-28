@@ -398,10 +398,10 @@ body {
     height: 28px;
   }
   62% {
-    height: 390px;
+    height: 430px;
   }
   86% {
-    height: 390px;
+    height: 430px;
   }
   100% {
     height: 28px;
@@ -418,17 +418,32 @@ body {
   }
 }
 
-@keyframes scarf-pool {
+.yarn-feed {
+  animation: yarn-feed 18s ease-in-out infinite;
+}
+
+.yarn-loose {
+  transform-origin: 38px 500px;
+  animation: yarn-breathe 5s ease-in-out infinite;
+}
+
+@keyframes yarn-feed {
   0%,
-  38% {
-    opacity: 0;
-  }
-  55%,
-  86% {
-    opacity: 1;
-  }
   100% {
-    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dashoffset: 18;
+  }
+}
+
+@keyframes yarn-breathe {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
   }
 }
 
@@ -444,12 +459,14 @@ body {
   .knit-yarn-loop,
   .scarf-reveal,
   .scarf-drape,
-  .scarf-pool {
+  .scarf-pool,
+  .yarn-feed,
+  .yarn-loose {
     animation: none;
   }
 
   .scarf-reveal {
-    height: 390px;
+    height: 430px;
   }
 
   .scarf-pool {

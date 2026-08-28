@@ -9,24 +9,24 @@ import { BloomFlower } from "@/components/flower-rain";
 import { PaletteToggle } from "@/components/palette-toggle";
 import { VibeToggle } from "@/components/vibe-toggle";
 
-const links = [
-  { href: "/shop", label: "Shop" },
+const studioLinks = [
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
 export function SiteHeader() {
-  const comingSoon = usePathname() === "/coming-soon";
+  const pathname = usePathname();
+  const comingSoon = pathname === "/" || pathname === "/coming-soon";
   const navLinks = comingSoon
-    ? links.filter((link) => link.href === "/about")
-    : links;
+    ? studioLinks.filter((link) => link.href === "/about")
+    : studioLinks;
 
   return (
     <header className="sticky top-0 z-40 border-b border-primary/10 bg-background/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <div className="flex items-center gap-2 text-primary">
           <BloomFlower className="size-9 animate-flower-turn sm:size-10" />
-          <Link href={comingSoon ? "/coming-soon" : "/"} className="flex items-center">
+          <Link href="/" className="flex items-center">
             <Wordmark className="text-[2rem] sm:text-[2.15rem]" />
             <span className="sr-only">Seljan home</span>
           </Link>
