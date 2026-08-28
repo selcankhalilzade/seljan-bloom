@@ -1,8 +1,8 @@
-import type { Product } from "@/lib/products";
+import type { ColorOption, Product } from "@/lib/products";
 import { FlowerMark } from "@/components/brand/marks";
 
 function KnitField({ slug, hex, accent }: { slug: string; hex: string; accent: string }) {
-  const patternId = `knit-${slug}`;
+  const patternId = `knit-${slug}-${hex.replace("#", "")}`;
 
   return (
     <svg className="absolute inset-0 h-full w-full" aria-hidden>
@@ -38,24 +38,29 @@ function KnitField({ slug, hex, accent }: { slug: string; hex: string; accent: s
 
 export function ProductVisual({
   product,
+  color,
   className,
 }: {
   product: Product;
+  color?: ColorOption;
   className?: string;
 }) {
+  const hex = color?.hex ?? product.hex;
+  const accent = color?.accent ?? product.accent;
+
   return (
     <div
       className={`${className ?? ""} overflow-hidden`}
-      style={{ backgroundColor: product.hex }}
+      style={{ backgroundColor: hex }}
     >
-      <KnitField slug={product.slug} hex={product.hex} accent={product.accent} />
+      <KnitField slug={product.slug} hex={hex} accent={accent} />
       <div className="relative flex h-full items-center justify-center transition-transform duration-700 ease-out group-hover:scale-110">
         {product.category === "charms" ? (
           product.slug === "mini-bloom-beanie-charm" ? (
             <svg viewBox="0 0 128 140" className="h-[42%] w-[42%]" fill="none">
               <path
                 d="M48 118 C22 118 18 92 22 74 C26 48 40 32 64 30 C90 28 108 46 110 74 C112 96 106 118 80 118 Z M28 108 C36 122 92 124 100 108"
-                fill={product.accent}
+                fill={accent}
                 opacity="0.88"
               />
             </svg>
@@ -67,19 +72,19 @@ export function ProductVisual({
             {product.category === "beanies" ? (
               <path
                 d="M48 118 C22 118 18 92 22 74 C26 48 40 32 64 30 C90 28 108 46 110 74 C112 96 106 118 80 118 Z M28 108 C36 122 92 124 100 108"
-                fill={product.accent}
+                fill={accent}
                 opacity="0.88"
               />
             ) : product.category === "headbands" ? (
               <path
                 d="M18 78 C28 48 48 36 64 36 C80 36 100 48 110 78 C102 70 84 64 64 64 C44 64 26 70 18 78 Z"
-                fill={product.accent}
+                fill={accent}
                 opacity="0.88"
               />
             ) : (
               <path
                 d="M42 24h26c8 0 12 8 12 16v82c0 20-10 30-28 36-12 4-26 2-32-8-4-8 2-14 10-16 12-2 18 4 24 2 6-2 8-10 8-18V40H42c-8 0-12-12-4-16 4-2 8 0 4 0z"
-                fill={product.accent}
+                fill={accent}
                 opacity="0.88"
               />
             )}

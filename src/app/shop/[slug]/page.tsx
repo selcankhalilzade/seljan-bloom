@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { ProductVisual } from "@/components/product-visual";
+import { ProductGallery } from "@/components/color-swatches";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { formatPrice, getProduct, products } from "@/lib/products";
@@ -35,9 +35,7 @@ export default async function ProductPage({
 
   return (
     <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:py-16">
-      <div className="group overflow-hidden border border-primary/10">
-        <ProductVisual product={product} className="relative aspect-[4/5] w-full" />
-      </div>
+      <ProductGallery product={product} />
       <div className="flex flex-col justify-center">
         <p className="text-[0.65rem] tracking-[0.28em] text-primary/50 uppercase">
           {product.category}
@@ -69,7 +67,11 @@ export default async function ProductPage({
             <dt className="text-[0.65rem] tracking-[0.2em] text-primary/50 uppercase">
               Color
             </dt>
-            <dd className="mt-1 text-primary">{product.colorName}</dd>
+            <dd className="mt-1 text-primary">
+              {product.colors && product.colors.length > 0
+                ? product.colors.map((color) => color.name).join(", ")
+                : product.colorName}
+            </dd>
           </div>
           <div>
             <dt className="text-[0.65rem] tracking-[0.2em] text-primary/50 uppercase">

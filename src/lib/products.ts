@@ -4,6 +4,12 @@ export type Category = (typeof categories)[number];
 
 export type Availability = "in-studio" | "made-to-order" | "sold";
 
+export type ColorOption = {
+  name: string;
+  hex: string;
+  accent: string;
+};
+
 export type Product = {
   slug: string;
   name: string;
@@ -13,6 +19,7 @@ export type Product = {
   colorName: string;
   hex: string;
   accent: string;
+  colors?: ColorOption[];
   availability: Availability;
   leadTime?: string;
   size: string;
@@ -28,15 +35,21 @@ export const products: Product[] = [
     category: "beanies",
     price: 72,
     yarn: "Merino and alpaca",
-    colorName: "Terracotta",
+    colorName: "Four studio colors",
     hex: "#A24A3E",
     accent: "#7A322C",
+    colors: [
+      { name: "Terracotta", hex: "#A24A3E", accent: "#7A322C" },
+      { name: "Oatmeal", hex: "#E6D3B8", accent: "#C4A882" },
+      { name: "Cream", hex: "#F3E6D6", accent: "#D7C2A8" },
+      { name: "Blush", hex: "#E8B8A8", accent: "#C97C72" },
+    ],
     availability: "made-to-order",
     leadTime: "About two weeks",
     size: "Adult, one size with slouch crown",
     care: "Hand wash cold, lay flat to dry",
     description:
-      "The studio beanie. A slightly slouchy crown in terracotta merino-alpaca, finished with a small flower at the brim.",
+      "The studio beanie. A slightly slouchy crown in merino-alpaca, finished with a small flower at the brim. Four colors.",
     featured: true,
   },
   {
@@ -77,14 +90,23 @@ export const products: Product[] = [
     category: "charms",
     price: 24,
     yarn: "Leftover merino",
-    colorName: "Oatmeal",
+    colorName: "Seven studio colors",
     hex: "#E6D3B8",
     accent: "#C4A882",
+    colors: [
+      { name: "Oatmeal", hex: "#E6D3B8", accent: "#C4A882" },
+      { name: "Terracotta", hex: "#A24A3E", accent: "#7A322C" },
+      { name: "Cream", hex: "#F3E6D6", accent: "#D7C2A8" },
+      { name: "Blush", hex: "#E8B8A8", accent: "#C97C72" },
+      { name: "Studio red", hex: "#8F3A36", accent: "#C45C52" },
+      { name: "Clay", hex: "#C9896A", accent: "#9A5A3E" },
+      { name: "Charcoal rose", hex: "#6B4A4A", accent: "#3F2A2A" },
+    ],
     availability: "in-studio",
     size: "About 3 cm, with a metal clasp",
     care: "Spot clean only",
     description:
-      "A tiny Bloom Beanie for keys or a bag. Made from leftover merino so each one is a slightly different oatmeal.",
+      "A tiny Bloom Beanie for keys or a bag. Seven colors, made from leftover merino so each one is a little different.",
     featured: true,
   },
   {
@@ -129,7 +151,7 @@ export function featuredProducts() {
 export const categoryCopy: Record<Category, { title: string; line: string }> = {
   beanies: {
     title: "Bloom Beanie",
-    line: "The studio beanie — slouch crown, flower at the brim.",
+    line: "The studio beanie — four colors, flower at the brim.",
   },
   scarves: {
     title: "Ribbon Scarf",

@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { ColorSwatches } from "@/components/color-swatches";
 import { ProductVisual } from "@/components/product-visual";
 import { Badge } from "@/components/ui/badge";
 import { formatPrice, type Product } from "@/lib/products";
@@ -25,7 +26,13 @@ export function ProductCard({ product }: { product: Product }) {
             <h3 className="font-display text-xl leading-tight text-primary italic transition-opacity group-hover:opacity-70">
               {product.name}
             </h3>
-            <p className="mt-1 text-sm text-primary/50">{product.colorName}</p>
+            {product.colors && product.colors.length > 0 ? (
+              <div className="mt-2">
+                <ColorSwatches colors={product.colors} />
+              </div>
+            ) : (
+              <p className="mt-1 text-sm text-primary/50">{product.colorName}</p>
+            )}
           </div>
           <p className="shrink-0 pt-0.5 text-sm tabular-nums text-primary/80">
             {formatPrice(product.price)}
