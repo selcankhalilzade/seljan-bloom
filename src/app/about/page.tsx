@@ -36,7 +36,7 @@ export default function AboutPage() {
           <div className="flex items-center gap-3 pt-4 text-primary">
             <FlowerMark className="size-8" />
             <span className="text-[0.7rem] tracking-[0.28em] uppercase">
-              Knit slowly · Crochet too
+              Knit slowly · Crochet accessories
             </span>
           </div>
         </div>
