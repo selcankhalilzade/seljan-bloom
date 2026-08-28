@@ -1,4 +1,4 @@
-const phrases = [
+const defaultPhrases = [
   "Bloom Beanie",
   "Ribbon Scarf",
   "Petal Headband",
@@ -8,7 +8,7 @@ const phrases = [
   "Crochet accessories",
 ];
 
-export function KnitTicker() {
+export function KnitTicker({ phrases = defaultPhrases }: { phrases?: string[] }) {
   const line = [...phrases, ...phrases].map((phrase, index) => (
     <span key={`${phrase}-${index}`} className="flex items-center gap-8">
       <span className="font-display text-2xl italic sm:text-3xl">{phrase}</span>
