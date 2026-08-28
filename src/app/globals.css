@@ -279,10 +279,7 @@ body {
 
 @keyframes flower-fall {
   0% {
-    transform: translate3d(-50%, -12vh, 0) rotate(0deg);
-    opacity: 0;
-  }
-  8% {
+    transform: translate3d(-50%, -6vh, 0) rotate(0deg);
     opacity: 0.95;
   }
   100% {
@@ -295,7 +292,7 @@ body {
 .flower-fall {
   animation-name: flower-fall;
   animation-timing-function: linear;
-  animation-fill-mode: forwards;
+  animation-fill-mode: both;
 }
 
 @keyframes marquee-shift {

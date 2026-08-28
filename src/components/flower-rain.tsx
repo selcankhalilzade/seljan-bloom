@@ -42,7 +42,7 @@ export function FlowerRainProvider({ children }: { children: ReactNode }) {
     const burst: Petal[] = Array.from({ length: 20 }, (_, index) => ({
       id: `${Date.now()}-${index}-${Math.random().toString(16).slice(2, 6)}`,
       left: Math.random() * 100,
-      delay: Math.random() * 0.55,
+      delay: Math.random() * 0.12,
       duration: 2.8 + Math.random() * 1.4,
       size: 22 + Math.random() * 26,
       drift: (Math.random() - 0.5) * 90,
