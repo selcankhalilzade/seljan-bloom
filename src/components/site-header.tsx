@@ -17,6 +17,9 @@ const links = [
 
 export function SiteHeader() {
   const comingSoon = usePathname() === "/coming-soon";
+  const navLinks = comingSoon
+    ? links.filter((link) => link.href === "/about")
+    : links;
 
   return (
     <header className="sticky top-0 z-40 border-b border-primary/10 bg-background/90 backdrop-blur-md">
@@ -29,47 +32,43 @@ export function SiteHeader() {
           </Link>
         </div>
 
-        {comingSoon ? null : (
-          <>
-            <nav className="hidden items-center gap-8 md:flex">
-              {links.map((link) => (
+        <nav className="hidden items-center gap-8 md:flex">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-[0.7rem] font-medium tracking-[0.28em] text-primary uppercase transition-opacity hover:opacity-70"
+            >
+              {link.label}
+            </Link>
+          ))}
+          <VibeToggle />
+          <PaletteToggle />
+        </nav>
+
+        <div className="flex items-center gap-3 md:hidden">
+          <VibeToggle />
+          <details className="relative">
+            <summary className="flex size-10 list-none cursor-pointer items-center justify-center rounded-full text-primary hover:bg-secondary [&::-webkit-details-marker]:hidden">
+              <Menu className="size-5" />
+              <span className="sr-only">Open menu</span>
+            </summary>
+            <div className="absolute right-0 mt-2 w-44 rounded-lg border border-primary/15 bg-background p-3 shadow-sm">
+              {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-[0.7rem] font-medium tracking-[0.28em] text-primary uppercase transition-opacity hover:opacity-70"
+                  className="block rounded-sm px-3 py-2 text-sm text-primary hover:bg-secondary"
                 >
                   {link.label}
                 </Link>
               ))}
-              <VibeToggle />
-              <PaletteToggle />
-            </nav>
-
-            <div className="flex items-center gap-3 md:hidden">
-              <VibeToggle />
-              <details className="relative">
-                <summary className="flex size-10 list-none cursor-pointer items-center justify-center rounded-full text-primary hover:bg-secondary [&::-webkit-details-marker]:hidden">
-                  <Menu className="size-5" />
-                  <span className="sr-only">Open menu</span>
-                </summary>
-                <div className="absolute right-0 mt-2 w-44 rounded-lg border border-primary/15 bg-background p-3 shadow-sm">
-                  {links.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="block rounded-sm px-3 py-2 text-sm text-primary hover:bg-secondary"
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                  <div className="mt-2 border-t border-primary/10 pt-2">
-                    <PaletteToggle />
-                  </div>
-                </div>
-              </details>
+              <div className="mt-2 border-t border-primary/10 pt-2">
+                <PaletteToggle />
+              </div>
             </div>
-          </>
-        )}
+          </details>
+        </div>
       </div>
     </header>
   );
