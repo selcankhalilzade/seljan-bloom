@@ -337,109 +337,80 @@ body {
 
 .knit-needle-a {
   transform-origin: 100% 100%;
-  animation: knit-needle-a 1.25s ease-in-out infinite;
+  animation: knit-needle-a 1.15s ease-in-out infinite;
 }
 
 .knit-needle-b {
   transform-origin: 0% 100%;
-  animation: knit-needle-b 1.25s ease-in-out infinite;
+  animation: knit-needle-b 1.15s ease-in-out infinite;
 }
 
 .knit-yarn-loop {
-  transform-origin: 118px 78px;
-  animation: knit-yarn 1.25s ease-in-out infinite;
+  transform-origin: 135px 102px;
+  animation: knit-yarn 1.15s ease-in-out infinite;
 }
 
 .scarf-reveal {
-  animation: scarf-reveal 18s ease-in-out infinite;
+  animation: scarf-reveal 14s ease-in-out infinite;
 }
 
 .scarf-drape {
-  transform-origin: 120px 96px;
-  animation: scarf-sway 4.8s ease-in-out infinite;
-}
-
-.yarn-feed {
-  animation: yarn-feed 18s ease-in-out infinite;
-}
-
-.yarn-loose {
-  transform-origin: 38px 500px;
-  animation: yarn-breathe 5s ease-in-out infinite;
+  transform-origin: 135px 112px;
+  animation: scarf-sway 5.5s ease-in-out infinite;
 }
 
 @keyframes knit-needle-a {
   0%,
   100% {
-    transform: rotate(-6deg);
+    transform: rotate(-7deg);
   }
   50% {
-    transform: rotate(4deg);
+    transform: rotate(5deg);
   }
 }
 
 @keyframes knit-needle-b {
   0%,
   100% {
-    transform: rotate(6deg);
+    transform: rotate(7deg);
   }
   50% {
-    transform: rotate(-4deg);
+    transform: rotate(-5deg);
   }
 }
 
 @keyframes knit-yarn {
   0%,
   100% {
-    transform: translateY(0);
+    transform: scaleY(1) translateY(0);
   }
   50% {
-    transform: translateY(3px);
+    transform: scaleY(1.18) translateY(2px);
   }
 }
 
 @keyframes scarf-reveal {
   0% {
-    height: 28px;
+    height: 22px;
   }
-  62% {
-    height: 430px;
+  70% {
+    height: 280px;
   }
-  86% {
-    height: 430px;
+  88% {
+    height: 280px;
   }
   100% {
-    height: 28px;
+    height: 22px;
   }
 }
 
 @keyframes scarf-sway {
   0%,
   100% {
-    transform: rotate(-1.4deg);
+    transform: rotate(-0.8deg);
   }
   50% {
-    transform: rotate(1.6deg);
-  }
-}
-
-@keyframes yarn-feed {
-  0%,
-  100% {
-    stroke-dashoffset: 0;
-  }
-  50% {
-    stroke-dashoffset: 18;
-  }
-}
-
-@keyframes yarn-breathe {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-3px);
+    transform: rotate(0.9deg);
   }
 }
 
@@ -454,13 +425,11 @@ body {
   .knit-needle-b,
   .knit-yarn-loop,
   .scarf-reveal,
-  .scarf-drape,
-  .yarn-feed,
-  .yarn-loose {
+  .scarf-drape {
     animation: none;
   }
 
   .scarf-reveal {
-    height: 430px;
+    height: 280px;
   }
 }
