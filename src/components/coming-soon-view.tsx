@@ -1,7 +1,7 @@
 import { FlowerMark, Wordmark } from "@/components/brand/marks";
 import { BloomFlower } from "@/components/flower-rain";
 import { KnitTicker } from "@/components/knit-ticker";
-import { KnittingScene } from "@/components/knitting-scene";
+import { YarnShelfScene } from "@/components/yarn-shelf-scene";
 import { WaitlistForm } from "@/components/waitlist-form";
 
 export function ComingSoonView() {
@@ -24,11 +24,11 @@ export function ComingSoonView() {
           <WaitlistForm />
         </div>
         <div className="mt-12 flex flex-col items-center md:mt-0 md:items-end">
-          <KnittingScene />
-          <p className="mt-8 max-w-[14rem] text-center text-[0.65rem] leading-relaxed tracking-[0.18em] text-primary/50 uppercase md:text-right">
-            Knit slowly.
+          <YarnShelfScene />
+          <p className="mt-8 max-w-[16rem] text-center text-[0.65rem] leading-relaxed tracking-[0.18em] text-primary/50 uppercase md:text-right">
+            Stocking the studio.
             <br />
-            Crochet accessories.
+            Cones of merino.
             <br />
             Worn constantly.
           </p>
