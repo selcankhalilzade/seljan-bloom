@@ -50,8 +50,8 @@ Buy the name wherever you like (Namecheap, Google Domains / Squarespace, Cloudfl
 
 | Type | Name | Value |
 | --- | --- | --- |
-| A | `@` | `10.0.1.2` (Vercel’s current apex IP — copy whatever Vercel shows) |
-| CNAME | `www` | `cname.vercel-dns.com` |
+| A | `@` | `76.76.21.21` (or whatever Vercel shows on the domain card) |
+| CNAME | `www` | the CNAME target on that same card (often `cname.vercel-dns.com`) |
 
 4. In your domain registrar’s DNS panel, add those records. Wait until they propagate (often minutes, sometimes a few hours).
 5. Vercel issues HTTPS for you. When the domain is **Valid**, `https://yourdomain.com` is the shop.
