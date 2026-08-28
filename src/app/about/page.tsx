@@ -19,19 +19,20 @@ export default function AboutPage() {
         <div className="space-y-5 text-sm leading-relaxed text-primary/80 sm:text-base">
           <p>
             Seljan is a handmade knit and crochet studio for accessories you
-            actually wear: the Bloom Beanie, Ribbon Scarf, Petal Headband, and
-            small charms that clip onto keys or a bag.
+            actually wear — soft, thoughtful pieces designed to become part of
+            your everyday.
           </p>
           <p>
-            Pieces are knit in small batches, often from leftover cones so the
-            palette stays warm — oatmeal, clay, terracotta, blush. Nothing is
-            mass-produced. If a beanie is marked sold, a similar one can usually
-            be made to order.
+            Each piece is made in small batches, often from leftover yarn,
+            keeping every release limited and intentional. Nothing is
+            mass-produced; each piece is made slowly, with attention to the
+            little details.
           </p>
           <p>
-            This site is for browsing. When something feels right, write to the
-            studio. Checkout will come later; for now the conversation is the
-            shop.
+            This is a space to browse, discover, and find something that feels
+            like you. New pieces will arrive in their own time — and if
+            something you love is gone, a similar piece may sometimes be made
+            just for you.
           </p>
           <div className="flex items-center gap-3 pt-4 text-primary">
             <FlowerMark className="size-8" />
