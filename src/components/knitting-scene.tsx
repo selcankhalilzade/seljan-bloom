@@ -1,83 +1,102 @@
 export function KnittingScene() {
   return (
     <div
-      className="knitting-scene relative mx-auto h-[22rem] w-[13.5rem] text-primary sm:h-[26rem] sm:w-[15.5rem] md:mx-0 md:h-[28rem]"
+      className="knitting-scene relative mx-auto h-[24rem] w-[14rem] text-primary sm:h-[28rem] sm:w-[16.5rem] md:mx-0 md:h-[30rem]"
       aria-hidden
     >
       <svg
-        viewBox="0 0 200 120"
-        className="absolute top-0 left-1/2 z-10 h-[5.5rem] w-[11.5rem] -translate-x-1/2 overflow-visible sm:h-24 sm:w-[13rem]"
+        viewBox="0 0 240 540"
+        className="h-full w-full overflow-visible"
+        fill="none"
       >
+        <defs>
+          <pattern
+            id="v-knit"
+            width="11"
+            height="9"
+            patternUnits="userSpaceOnUse"
+            patternTransform="rotate(-2)"
+          >
+            <path
+              d="M1.2 1.4 L5.4 7.1 L9.8 1.6"
+              stroke="currentColor"
+              strokeWidth="1.15"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </pattern>
+          <clipPath id="scarf-clip">
+            <rect className="scarf-reveal" x="20" y="88" width="200" height="36" />
+          </clipPath>
+        </defs>
+
         <g className="knit-needle knit-needle-a">
-          <line
-            x1="18"
-            y1="14"
-            x2="102"
-            y2="86"
-            stroke="#d7c2a8"
-            strokeWidth="6"
+          <path
+            d="M22 20 Q 68 52 114 96"
+            stroke="currentColor"
+            strokeWidth="2.4"
             strokeLinecap="round"
           />
-          <line
-            x1="18"
-            y1="14"
-            x2="102"
-            y2="86"
-            stroke="#9a7a58"
-            strokeWidth="1.25"
-            strokeLinecap="round"
-            opacity="0.55"
-          />
-          <circle cx="18" cy="14" r="7" fill="#f3e6d6" stroke="#c4a882" strokeWidth="1.2" />
+          <circle cx="22" cy="20" r="5.2" stroke="currentColor" strokeWidth="1.8" />
         </g>
         <g className="knit-needle knit-needle-b">
-          <line
-            x1="182"
-            y1="14"
-            x2="98"
-            y2="86"
-            stroke="#d7c2a8"
-            strokeWidth="6"
+          <path
+            d="M218 18 Q 172 54 126 96"
+            stroke="currentColor"
+            strokeWidth="2.4"
             strokeLinecap="round"
           />
-          <line
-            x1="182"
-            y1="14"
-            x2="98"
-            y2="86"
-            stroke="#9a7a58"
-            strokeWidth="1.25"
-            strokeLinecap="round"
-            opacity="0.55"
-          />
-          <circle cx="182" cy="14" r="7" fill="#f3e6d6" stroke="#c4a882" strokeWidth="1.2" />
+          <circle cx="218" cy="18" r="5.2" stroke="currentColor" strokeWidth="1.8" />
         </g>
+
         <path
           className="knit-yarn-loop"
-          d="M92 82 C88 70 112 70 108 82"
-          fill="none"
+          d="M108 78 C 96 58 132 52 128 78 M118 70 C 148 42 168 64 154 88"
           stroke="currentColor"
-          strokeWidth="3.2"
+          strokeWidth="1.6"
           strokeLinecap="round"
         />
-      </svg>
 
-      <div className="absolute top-[4.4rem] left-1/2 flex w-24 -translate-x-1/2 flex-col items-center sm:top-[5rem] sm:w-28">
-        <div className="scarf-length scarf-knit w-full origin-top" />
-        <div className="scarf-pile relative mt-[-0.4rem] w-[9.5rem] sm:w-[11rem]">
-          {[0, 1, 2, 3, 4, 5].map((fold) => (
-            <div
-              key={fold}
-              className="scarf-fold scarf-knit absolute left-1/2 h-7 w-[78%] -translate-x-1/2 rounded-full sm:h-8"
-              style={{
-                top: `${fold * 14}px`,
-                width: `${70 + (fold % 3) * 10}%`,
-                animationDelay: `${4.2 + fold * 0.85}s`,
-              }}
+        <g clipPath="url(#scarf-clip)">
+          <g className="scarf-drape">
+            <path
+              d="M90 96
+                 C 87 150 84 210 88 268
+                 C 90 310 78 338 58 372
+                 C 40 402 46 438 78 456
+                 C 112 476 162 470 186 442
+                 C 206 420 204 388 176 372
+                 C 154 360 148 340 150 318
+                 C 154 250 156 190 152 140
+                 C 150 114 148 100 146 96
+                 Z"
+              fill="url(#v-knit)"
+              stroke="currentColor"
+              strokeWidth="1.35"
+              strokeLinejoin="round"
             />
-          ))}
-        </div>
-      </div>
+            <path
+              className="scarf-pool"
+              d="M64 400
+                 C 52 424 70 448 108 454
+                 C 148 460 178 444 182 420
+                 C 186 398 160 392 138 404
+                 C 116 416 92 418 74 406"
+              stroke="currentColor"
+              strokeWidth="1.7"
+              strokeLinecap="round"
+            />
+            <path
+              className="scarf-pool"
+              d="M82 428 C 102 442 140 440 158 426"
+              stroke="currentColor"
+              strokeWidth="1.4"
+              strokeLinecap="round"
+              opacity="0.75"
+            />
+          </g>
+        </g>
+      </svg>
     </div>
   );
 }
