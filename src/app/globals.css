@@ -395,16 +395,16 @@ body {
 
 @keyframes scarf-reveal {
   0% {
-    height: 28px;
+    height: 40px;
   }
   62% {
-    height: 430px;
+    height: 360px;
   }
   86% {
-    height: 430px;
+    height: 360px;
   }
   100% {
-    height: 28px;
+    height: 40px;
   }
 }
 
@@ -466,7 +466,7 @@ body {
   }
 
   .scarf-reveal {
-    height: 430px;
+    height: 360px;
   }
 
   .scarf-pool {

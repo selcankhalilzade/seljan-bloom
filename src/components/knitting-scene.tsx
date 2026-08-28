@@ -1,10 +1,12 @@
 const cream = "#F3E6D6";
-const blush = "#E8B8A8";
-const clay = "#C9896A";
-const red = "#A24A3E";
-const bordeaux = "#6E2C28";
-const wicker = "#8A5340";
+const pink = "#E8B8A8";
+const pinkDeep = "#D98980";
+const red = "#C45C52";
+const clay = "#B07850";
+const wicker = "#8C5A3C";
+const wickerDark = "#6B3E28";
 const bone = "#E6D3B8";
+const wood = "#5C3A2A";
 
 function YarnBall({
   cx,
@@ -19,173 +21,231 @@ function YarnBall({
 }) {
   return (
     <g transform={`translate(${cx} ${cy})`}>
-      <circle r={r} fill={color} filter="url(#yarn-grain)" />
-      <circle r={r * 0.82} fill="none" stroke={cream} strokeWidth="1.1" opacity="0.25" />
-      <path
-        d={`M ${-r * 0.75} ${-r * 0.08} C ${-r * 0.15} ${-r * 0.9} ${r * 0.4} ${-r * 0.72} ${r * 0.78} ${-r * 0.05}
-            M ${-r * 0.72} ${r * 0.22} C ${-r * 0.05} ${r * 0.82} ${r * 0.42} ${r * 0.7} ${r * 0.72} ${r * 0.1}
-            M ${-r * 0.2} ${-r * 0.7} C ${r * 0.6} ${-r * 0.15} ${r * 0.45} ${r * 0.4} ${0} ${r * 0.72}`}
-        fill="none"
-        stroke={bordeaux}
-        strokeWidth="0.85"
-        opacity="0.32"
-        strokeLinecap="round"
-      />
+      <circle r={r} fill={color} filter="url(#crayon)" />
+      {Array.from({ length: 10 }).map((_, i) => (
+        <ellipse
+          key={i}
+          rx={r * (0.92 - i * 0.07)}
+          ry={r * (0.78 - i * 0.05)}
+          fill="none"
+          stroke={wickerDark}
+          strokeWidth="1.05"
+          opacity={0.22 + (i % 3) * 0.06}
+          transform={`rotate(${i * 18})`}
+        />
+      ))}
     </g>
   );
 }
 
-const scarfLine =
-  "M218 92 C 219 150 217 198 218 238 C 220 278 168 292 156 328 C 144 364 214 378 222 418 C 230 456 168 472 176 512";
+const COLS = 6;
+const ROWS = 14;
+const STITCH_W = 20;
+const STITCH_H = 18;
+const ORIGIN_X = 34;
+const ORIGIN_Y = 92;
+
+function chunkyStitches() {
+  const stitches: { d: string; color: string }[] = [];
+  for (let row = 0; row < ROWS; row++) {
+    const color = row % 3 === 0 ? cream : row % 3 === 1 ? pink : red;
+    for (let col = 0; col < COLS; col++) {
+      const wave = Math.sin(row * 0.4) * 5 + Math.sin(col * 0.9) * 2.5;
+      const x = ORIGIN_X + col * STITCH_W + wave;
+      const y = ORIGIN_Y + row * STITCH_H;
+      const w = STITCH_W * 0.92;
+      const h = STITCH_H * 0.82;
+      stitches.push({
+        color,
+        d: `M ${x} ${y} L ${x + w / 2} ${y + h} L ${x + w} ${y}`,
+      });
+    }
+  }
+  return stitches;
+}
 
 export function KnittingScene() {
+  const slats = Array.from({ length: 13 }, (_, i) => 28 + i * 11.2);
+  const stitches = chunkyStitches();
+  const panelBottom = ORIGIN_Y + ROWS * STITCH_H + 8;
+  const scallops = Array.from({ length: COLS }, (_, col) => {
+    const x = ORIGIN_X + col * STITCH_W + 4;
+    return `A 9 8 0 0 0 ${x + STITCH_W} ${panelBottom}`;
+  }).join(" ");
+
   return (
     <div
-      className="knitting-scene relative mx-auto h-[26rem] w-[16.5rem] text-primary sm:h-[30rem] sm:w-[19rem] md:mx-0 md:h-[32rem] md:w-[20.5rem]"
+      className="knitting-scene relative mx-auto h-[26rem] w-[19rem] text-primary sm:h-[30rem] sm:w-[22rem] md:mx-0 md:h-[32rem] md:w-[24rem]"
       aria-hidden
     >
-      <svg viewBox="0 0 320 580" className="h-full w-full overflow-visible" fill="none">
+      <svg viewBox="0 0 400 560" className="h-full w-full overflow-visible" fill="none">
         <defs>
-          <filter id="yarn-grain" x="-25%" y="-25%" width="150%" height="150%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" result="n" />
-            <feDisplacementMap in="SourceGraphic" in2="n" scale="1.8" />
+          <filter id="crayon" x="-30%" y="-30%" width="160%" height="160%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" result="n" />
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2" />
           </filter>
-          <linearGradient id="scarf-colors" gradientUnits="userSpaceOnUse" x1="218" y1="90" x2="180" y2="520">
-            <stop offset="0%" stopColor={bordeaux} />
-            <stop offset="28%" stopColor={red} />
-            <stop offset="52%" stopColor={blush} />
-            <stop offset="76%" stopColor={cream} />
-            <stop offset="100%" stopColor={bordeaux} />
-          </linearGradient>
-          <pattern
-            id="v-knit"
-            width="9"
-            height="8"
-            patternUnits="userSpaceOnUse"
-            patternTransform="rotate(-8)"
-          >
-            <path
-              d="M1 1.2 L4.5 6.4 L8.2 1.3"
-              stroke={bordeaux}
-              strokeWidth="0.9"
-              strokeLinecap="round"
-              opacity="0.55"
-            />
-          </pattern>
           <clipPath id="scarf-clip">
-            <rect className="scarf-reveal" x="120" y="78" width="140" height="28" />
+            <rect className="scarf-reveal" x="8" y="62" width="180" height="28" />
           </clipPath>
         </defs>
-
-        <g className="knit-needle knit-needle-a">
-          <path d="M118 16 Q 168 48 214 88" stroke={bone} strokeWidth="3.2" strokeLinecap="round" />
-          <circle cx="118" cy="16" r="5.2" fill={cream} stroke={wicker} strokeWidth="1.1" />
-        </g>
-        <g className="knit-needle knit-needle-b">
-          <path d="M302 14 Q 258 50 222 88" stroke={bone} strokeWidth="3.2" strokeLinecap="round" />
-          <circle cx="302" cy="14" r="5.2" fill={cream} stroke={wicker} strokeWidth="1.1" />
-        </g>
-        <path
-          className="knit-yarn-loop"
-          d="M208 72 C 196 54 232 48 228 74"
-          stroke={red}
-          strokeWidth="1.8"
-          strokeLinecap="round"
-        />
 
         <g clipPath="url(#scarf-clip)">
           <g className="scarf-drape">
             <path
-              d={scarfLine}
-              stroke="url(#scarf-colors)"
-              strokeWidth="26"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+              d={`M ${ORIGIN_X - 6} 78
+                  C ${ORIGIN_X - 10} 160 ${ORIGIN_X + 4} 240 ${ORIGIN_X - 2} ${panelBottom}
+                  ${scallops}
+                  C ${ORIGIN_X + COLS * STITCH_W + 18} 240 ${ORIGIN_X + COLS * STITCH_W + 8} 150 ${ORIGIN_X + COLS * STITCH_W + 10} 78
+                  Z`}
+              fill={red}
+              opacity="0.92"
             />
-            <path
-              d={scarfLine}
-              stroke="url(#v-knit)"
-              strokeWidth="18"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              opacity="0.85"
-            />
+            {stitches.map((stitch) => (
+              <path
+                key={stitch.d}
+                d={stitch.d}
+                stroke={stitch.color}
+                strokeWidth="3.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            ))}
           </g>
         </g>
 
+        <g className="knit-needle knit-needle-a">
+          <line x1="16" y1="74" x2="168" y2="80" stroke={wood} strokeWidth="5.2" strokeLinecap="round" />
+          <circle cx="16" cy="74" r="6" fill={bone} stroke={wood} strokeWidth="1.1" />
+        </g>
+        {Array.from({ length: 7 }).map((_, i) => (
+          <ellipse
+            key={`loop-${i}`}
+            className="knit-yarn-loop"
+            cx={42 + i * 16}
+            cy="78"
+            rx="8"
+            ry="6.5"
+            stroke={pink}
+            strokeWidth="2.8"
+            fill="none"
+          />
+        ))}
+        <g className="knit-needle knit-needle-b">
+          <line x1="148" y1="78" x2="214" y2="18" stroke={wood} strokeWidth="5.2" strokeLinecap="round" />
+          <circle cx="214" cy="18" r="6" fill={bone} stroke={wood} strokeWidth="1.1" />
+        </g>
+        <path
+          d="M168 52 C 186 40 198 44 208 28"
+          stroke={pink}
+          strokeWidth="2.4"
+          strokeLinecap="round"
+        />
         <path
           className="yarn-feed"
-          d="M96 455 C 72 380 96 250 150 160 C 178 122 200 104 214 90"
+          d="M210 22 C 248 48 268 120 292 200 C 310 280 318 340 304 400"
           stroke={red}
-          strokeWidth="1.5"
+          strokeWidth="1.7"
           strokeLinecap="round"
-          strokeDasharray="3 6"
         />
 
-        <ellipse cx="108" cy="568" rx="72" ry="11" fill={bordeaux} opacity="0.08" />
+        <g className="yarn-loose">
+          <YarnBall cx={236} cy={528} r={17} color={cream} />
+        </g>
+        <path
+          d="M222 536 C 204 548 180 544 164 526"
+          stroke={cream}
+          strokeWidth="1.7"
+          strokeLinecap="round"
+        />
 
-        <g transform="translate(18 430)">
-          <path
-            d="M22 48 C 24 96 52 118 92 120 C 134 118 160 96 162 48"
-            fill={clay}
-            filter="url(#yarn-grain)"
-          />
-          <path
-            d="M22 48 C 24 96 52 118 92 120 C 134 118 160 96 162 48"
-            stroke={wicker}
-            strokeWidth="1.8"
-          />
-          {Array.from({ length: 11 }).map((_, i) => {
-            const x = 32 + i * 11.5;
+        <g transform="translate(228 408)">
+          <ellipse cx="90" cy="134" rx="76" ry="11" fill={wickerDark} opacity="0.18" />
+          <ellipse cx="90" cy="118" rx="72" ry="16" fill={clay} />
+          <ellipse cx="90" cy="118" rx="72" ry="16" fill="none" stroke={wicker} strokeWidth="1.6" />
+
+          <ellipse cx="90" cy="52" rx="70" ry="22" fill={wickerDark} opacity="0.45" />
+
+          {slats.map((x, i) => {
+            const t = (x - 90) / 70;
+            const endX = 90 + t * 68;
+            const endY = 118 - Math.sqrt(Math.max(0, 1 - t * t)) * 10;
             return (
               <path
                 key={x}
-                d={`M ${x} 50 C ${x + 2} 82 ${x + 3} 104 ${92 + (x - 92) * 0.2} 118`}
+                d={`M ${x} 50 Q ${x + (i - 6) * 0.35} ${80 + Math.abs(i - 6)} ${endX} ${endY}`}
+                stroke={clay}
+                strokeWidth="4.4"
+                strokeLinecap="round"
+              />
+            );
+          })}
+          {slats.map((x, i) => {
+            const t = (x - 90) / 70;
+            const endX = 90 + t * 68;
+            const endY = 118 - Math.sqrt(Math.max(0, 1 - t * t)) * 10;
+            return (
+              <path
+                key={`edge-${x}`}
+                d={`M ${x} 50 Q ${x} 86 ${endX} ${endY}`}
                 stroke={wicker}
-                strokeWidth="1.35"
+                strokeWidth="1.2"
                 opacity="0.75"
               />
             );
           })}
-          {Array.from({ length: 4 }).map((_, i) => (
+          {[0, 1, 2].map((row) => (
             <path
-              key={`weave-${i}`}
-              d={`M 28 ${62 + i * 12} Q 92 ${68 + i * 12} 156 ${62 + i * 12}`}
-              stroke={bone}
-              strokeWidth="0.9"
-              opacity="0.35"
+              key={`weft-${row}`}
+              d={`M 32 ${64 + row * 14} Q 90 ${70 + row * 14} 148 ${64 + row * 14}`}
+              stroke={wicker}
+              strokeWidth="2.2"
+              opacity="0.5"
             />
           ))}
-          <ellipse cx="92" cy="46" rx="74" ry="20" fill="#5c382c" opacity="0.55" />
-          <ellipse cx="92" cy="44" rx="76" ry="21" fill="none" stroke={wicker} strokeWidth="5.5" />
-          <ellipse cx="92" cy="42" rx="70" ry="16" fill="none" stroke={bone} strokeWidth="1.2" opacity="0.45" />
 
-          <YarnBall cx={68} cy={38} r={22} color={bordeaux} />
-          <YarnBall cx={108} cy={30} r={18} color={red} />
-          <YarnBall cx={138} cy={44} r={16} color={blush} />
-          <YarnBall cx={96} cy={52} r={14} color={cream} />
+          <ellipse cx="90" cy="48" rx="80" ry="26" fill="none" stroke={clay} strokeWidth="9" strokeLinecap="round" />
+          <ellipse
+            cx="90"
+            cy="46"
+            rx="80"
+            ry="26"
+            fill="none"
+            stroke={bone}
+            strokeWidth="2.2"
+            strokeDasharray="6 7"
+            opacity="0.7"
+          />
+          <ellipse
+            cx="90"
+            cy="50"
+            rx="80"
+            ry="26"
+            fill="none"
+            stroke={wickerDark}
+            strokeWidth="2"
+            strokeDasharray="6 7"
+            strokeDashoffset="6"
+            opacity="0.8"
+          />
+          <ellipse cx="90" cy="48" rx="80" ry="26" fill="none" stroke={wicker} strokeWidth="1.3" />
 
-          <g transform="translate(58 16) rotate(-32)">
-            <line x1="0" y1="0" x2="42" y2="-26" stroke={bone} strokeWidth="2.6" strokeLinecap="round" />
-            <line x1="7" y1="5" x2="46" y2="-20" stroke={bone} strokeWidth="2.6" strokeLinecap="round" />
-            <circle cx="0" cy="0" r="3" fill={cream} stroke={wicker} strokeWidth="0.9" />
-            <circle cx="7" cy="5" r="3" fill={cream} stroke={wicker} strokeWidth="0.9" />
+          <YarnBall cx={60} cy={36} r={22} color={red} />
+          <YarnBall cx={94} cy={24} r={17} color={pinkDeep} />
+          <YarnBall cx={124} cy={40} r={18} color={pink} />
+          <YarnBall cx={88} cy={50} r={14} color={cream} />
+
+          <g transform="translate(50 14) rotate(-38)">
+            <line x1="0" y1="0" x2="48" y2="-30" stroke={bone} strokeWidth="3" strokeLinecap="round" />
+            <line x1="8" y1="6" x2="52" y2="-24" stroke={bone} strokeWidth="3" strokeLinecap="round" />
+            <circle cx="0" cy="0" r="3.4" fill={cream} stroke={wicker} strokeWidth="0.9" />
+            <circle cx="8" cy="6" r="3.4" fill={cream} stroke={wicker} strokeWidth="0.9" />
           </g>
         </g>
 
-        <g className="yarn-loose">
-          <YarnBall cx={36} cy={548} r={17} color={cream} />
-        </g>
         <path
-          d="M50 556 C 74 572 104 564 118 542"
-          stroke={cream}
-          strokeWidth="1.6"
-          strokeLinecap="round"
-        />
-        <path
-          d="M156 512 C 178 528 204 522 228 500"
-          stroke={blush}
-          strokeWidth="1.45"
+          d="M352 438 C 378 448 392 442 408 422"
+          stroke={pink}
+          strokeWidth="1.55"
           strokeLinecap="round"
         />
       </svg>
