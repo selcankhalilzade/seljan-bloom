@@ -130,7 +130,7 @@ export const products: Product[] = [
     size: "About 4 cm across, with a metal clasp",
     care: "Spot clean only",
     description:
-      "A tiny six-petal flower, the same mark as the studio seal. Clips to a beanie, bag, or zipper pull.",
+      "A tiny six-petal flower, the same mark as the studio seal. Clips to a beanie, bag, or keys.",
     featured: true,
   },
   {
@@ -198,6 +198,6 @@ export const categoryCopy: Record<Category, { title: string; line: string }> = {
   },
   charms: {
     title: "Charms",
-    line: "Small knitted marks for a zipper, a bag, or the needles.",
+    line: "Small knitted marks for keys, a bag, or the needles.",
   },
 };
