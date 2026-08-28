@@ -39,8 +39,10 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-        <p className="mt-10 max-w-[12rem] text-[0.65rem] leading-relaxed tracking-[0.18em] text-primary/50 uppercase md:mt-0 md:text-right">
+        <p className="mt-10 max-w-[14rem] text-[0.65rem] leading-relaxed tracking-[0.18em] text-primary/50 uppercase md:mt-0 md:text-right">
           Knit slowly.
+          <br />
+          Crochet too.
           <br />
           Worn constantly.
         </p>

@@ -3,6 +3,7 @@ const phrases = [
   "Ribbon scarf",
   "Petal charm",
   "Knit slowly",
+  "Crochet too",
   "Worn constantly",
   "Small batch",
   "Made by hand",
