@@ -22,8 +22,8 @@ export function ComingSoonView() {
           </p>
           <WaitlistForm />
         </div>
-        <div className="mt-12 flex flex-col items-center md:mt-0 md:items-end">
-          <p className="max-w-[14rem] text-center text-[0.65rem] leading-relaxed tracking-[0.18em] text-primary/50 uppercase md:text-right">
+        <div className="mt-12 flex min-h-[22rem] flex-col items-center justify-end sm:min-h-[26rem] md:mt-0 md:min-h-[28rem] md:items-end">
+          <p className="mt-8 max-w-[14rem] text-center text-[0.65rem] leading-relaxed tracking-[0.18em] text-primary/50 uppercase md:text-right">
             Knit slowly.
             <br />
             Crochet accessories.
