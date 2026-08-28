@@ -51,7 +51,7 @@ export default function ComingSoonPage() {
         ]}
       />
 
-      <section className="story-checkered band-oxblood border-y border-band-foreground/45 bg-band text-band-foreground">
+      <section className="border-t border-primary/15 text-primary">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 sm:px-6 md:grid-cols-2">
           <div className="flex items-center justify-center">
             <FlowerMark className="animate-flower-float size-36 sm:size-44 md:size-52" />
@@ -60,7 +60,7 @@ export default function ComingSoonPage() {
             <h2 className="font-display text-5xl italic">
               By hand, on purpose.
             </h2>
-            <p className="text-sm leading-relaxed text-band-foreground/80 palette-invert:text-foreground/75 sm:text-base">
+            <p className="text-sm leading-relaxed text-primary/70 sm:text-base">
               No factory run. Cones of merino, leftover blush, terracotta that
               matches the flower. When the table opens, pieces will be small
               batches — the knit that does the outfit.
