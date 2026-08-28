@@ -18,9 +18,9 @@ export default function AboutPage() {
       <div className="mt-12 grid items-start gap-12 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="space-y-5 text-sm leading-relaxed text-primary/80 sm:text-base">
           <p>
-            Seljan is a handmade knit studio for accessories you actually wear:
-            beanies for cold mornings, scarves that drape without bulk, and
-            small charms that clip onto a zipper or a bag.
+            Seljan is a handmade knit and crochet studio for accessories you
+            actually wear: beanies for cold mornings, scarves that drape without
+            bulk, and small charms that clip onto a zipper or a bag.
           </p>
           <p>
             Pieces are knit in small batches, often from leftover cones so the

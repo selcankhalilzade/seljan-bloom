@@ -24,8 +24,8 @@ export default function HomePage() {
             Soft, but not sweet.
           </h1>
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-primary/70 sm:text-base">
-            Bloom beanies, ribbon scarves, charms. Handmade in small batches —
-            the knit that does the outfit.
+            Bloom beanies, ribbon scarves, charms. Knit and crochet in small
+            batches — the piece that does the outfit.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/shop" className={cn(buttonVariants({ size: "lg" }), btn)}>
