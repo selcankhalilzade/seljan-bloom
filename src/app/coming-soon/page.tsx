@@ -1,15 +1,9 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 
 import { FlowerMark, Wordmark } from "@/components/brand/marks";
 import { BloomFlower } from "@/components/flower-rain";
 import { KnitTicker } from "@/components/knit-ticker";
 import { WaitlistForm } from "@/components/waitlist-form";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-
-const btn =
-  "h-11 rounded-[var(--btn-radius)] px-8 text-[0.7rem] tracking-[0.22em] uppercase";
 
 export const metadata: Metadata = {
   title: "Coming soon",
@@ -34,14 +28,6 @@ export default function ComingSoonPage() {
             Headband, and charms — knit slowly, then worn constantly.
           </p>
           <WaitlistForm />
-          <div className="mt-4">
-            <Link
-              href="/about"
-              className={cn(buttonVariants({ variant: "outline", size: "lg" }), btn)}
-            >
-              About
-            </Link>
-          </div>
         </div>
         <p className="mt-10 max-w-[14rem] text-[0.65rem] leading-relaxed tracking-[0.18em] text-primary/50 uppercase md:mt-0 md:text-right">
           Knit slowly.
