@@ -12,7 +12,7 @@ export default function AboutPage() {
         The studio
       </p>
       <h1 className="mt-3 font-display text-5xl text-primary italic sm:text-7xl">
-        Made with heart
+        Seljan
       </h1>
 
       <div className="mt-12 grid items-start gap-12 lg:grid-cols-[1.1fr_0.9fr]">
