@@ -92,6 +92,12 @@ export function ProductView({ product }: { product: Product }) {
             </dt>
             <dd className="mt-1 text-primary">{product.care}</dd>
           </div>
+          <div>
+            <dt className="text-[0.65rem] tracking-[0.2em] text-primary/50 uppercase">
+              Includes
+            </dt>
+            <dd className="mt-1 text-primary">A pouch for keeping</dd>
+          </div>
         </dl>
         {product.leadTime ? (
           <p className="mt-4 text-sm text-primary/70">

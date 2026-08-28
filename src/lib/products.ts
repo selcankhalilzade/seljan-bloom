@@ -49,7 +49,7 @@ export const products: Product[] = [
     size: "Adult, one size with slouch crown",
     care: "Hand wash cold, lay flat to dry",
     description:
-      "The studio beanie. A slightly slouchy crown in merino-alpaca, finished with a small flower at the brim. Four colors.",
+      "The studio beanie. A slightly slouchy crown in merino-alpaca, finished with a small flower at the brim. Four colors. Each piece comes with a pouch for keeping.",
     featured: true,
   },
   {
@@ -65,7 +65,7 @@ export const products: Product[] = [
     size: "180 cm × 22 cm",
     care: "Hand wash cold, lay flat to dry",
     description:
-      "A long, narrow scarf with a ribbon drape. Cream merino that layers over coats without feeling bulky at the neck.",
+      "A long, narrow scarf with a ribbon drape. Cream merino that layers over coats without feeling bulky at the neck. Each piece comes with a pouch for keeping.",
     featured: true,
   },
   {
@@ -81,7 +81,7 @@ export const products: Product[] = [
     size: "Adult, one size with a little give",
     care: "Hand wash cold, lay flat to dry",
     description:
-      "A soft headband with a petal overlap at the front. Knit or crochet to order in blush merino.",
+      "A soft headband with a petal overlap at the front. Knit or crochet to order in blush merino. Each piece comes with a pouch for keeping.",
     featured: true,
   },
   {
@@ -106,7 +106,7 @@ export const products: Product[] = [
     size: "About 3 cm, with a metal clasp",
     care: "Spot clean only",
     description:
-      "A tiny Bloom Beanie for keys or a bag. Seven colors, made from leftover merino so each one is a little different.",
+      "A tiny Bloom Beanie for keys or a bag. Seven colors, made from leftover merino so each one is a little different. Each piece comes with a pouch for keeping.",
     featured: true,
   },
   {
@@ -122,7 +122,7 @@ export const products: Product[] = [
     size: "About 4 cm across, with a metal clasp",
     care: "Spot clean only",
     description:
-      "The six-petal Seljan flower, as a charm. Clips to keys, a bag, or the Bloom Beanie itself.",
+      "The six-petal Seljan flower, as a charm. Clips to keys, a bag, or the Bloom Beanie itself. Each piece comes with a pouch for keeping.",
     featured: true,
   },
 ];
