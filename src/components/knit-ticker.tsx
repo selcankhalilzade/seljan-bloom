@@ -1,12 +1,11 @@
 const phrases = [
-  "Bloom beanie",
-  "Ribbon scarf",
-  "Petal charm",
+  "Bloom Beanie",
+  "Ribbon Scarf",
+  "Petal Headband",
+  "Mini Bloom Beanie Charm",
+  "Signature Flower Charm",
   "Knit slowly",
   "Crochet accessories",
-  "Worn constantly",
-  "Small batch",
-  "Made by hand",
 ];
 
 export function KnitTicker() {

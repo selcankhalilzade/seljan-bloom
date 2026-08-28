@@ -51,12 +51,28 @@ export function ProductVisual({
       <KnitField slug={product.slug} hex={product.hex} accent={product.accent} />
       <div className="relative flex h-full items-center justify-center transition-transform duration-700 ease-out group-hover:scale-110">
         {product.category === "charms" ? (
-          <FlowerMark className="size-24 sm:size-28" />
+          product.slug === "mini-bloom-beanie-charm" ? (
+            <svg viewBox="0 0 128 140" className="h-[42%] w-[42%]" fill="none">
+              <path
+                d="M48 118 C22 118 18 92 22 74 C26 48 40 32 64 30 C90 28 108 46 110 74 C112 96 106 118 80 118 Z M28 108 C36 122 92 124 100 108"
+                fill={product.accent}
+                opacity="0.88"
+              />
+            </svg>
+          ) : (
+            <FlowerMark className="size-24 sm:size-28" />
+          )
         ) : (
           <svg viewBox="0 0 128 140" className="h-[58%] w-[58%]" fill="none">
             {product.category === "beanies" ? (
               <path
                 d="M48 118 C22 118 18 92 22 74 C26 48 40 32 64 30 C90 28 108 46 110 74 C112 96 106 118 80 118 Z M28 108 C36 122 92 124 100 108"
+                fill={product.accent}
+                opacity="0.88"
+              />
+            ) : product.category === "headbands" ? (
+              <path
+                d="M18 78 C28 48 48 36 64 36 C80 36 100 48 110 78 C102 70 84 64 64 64 C44 64 26 70 18 78 Z"
                 fill={product.accent}
                 opacity="0.88"
               />

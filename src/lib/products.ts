@@ -1,4 +1,4 @@
-export const categories = ["beanies", "scarves", "charms"] as const;
+export const categories = ["beanies", "scarves", "headbands", "charms"] as const;
 
 export type Category = (typeof categories)[number];
 
@@ -23,24 +23,8 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    slug: "harbor-beanie",
-    name: "Harbor Beanie",
-    category: "beanies",
-    price: 68,
-    yarn: "Merino wool",
-    colorName: "Oatmeal",
-    hex: "#E6D3B8",
-    accent: "#C4A882",
-    availability: "in-studio",
-    size: "Adult, one size with ribbed brim",
-    care: "Hand wash cold, lay flat to dry",
-    description:
-      "A close, ribbed beanie with a folded brim. Knit in oatmeal merino so it sits soft against the hairline without itching.",
-    featured: true,
-  },
-  {
-    slug: "ember-beanie",
-    name: "Ember Beanie",
+    slug: "bloom-beanie",
+    name: "Bloom Beanie",
     category: "beanies",
     price: 72,
     yarn: "Merino and alpaca",
@@ -52,27 +36,12 @@ export const products: Product[] = [
     size: "Adult, one size with slouch crown",
     care: "Hand wash cold, lay flat to dry",
     description:
-      "The studio color. A slightly slouchy crown in terracotta merino-alpaca, finished with a small flower tag at the brim.",
+      "The studio beanie. A slightly slouchy crown in terracotta merino-alpaca, finished with a small flower at the brim.",
     featured: true,
   },
   {
-    slug: "coastal-beanie",
-    name: "Coastal Beanie",
-    category: "beanies",
-    price: 68,
-    yarn: "Cotton-linen blend",
-    colorName: "Sea salt",
-    hex: "#D9D4C8",
-    accent: "#A8B0A4",
-    availability: "sold",
-    size: "Adult, one size",
-    care: "Hand wash cold, lay flat to dry",
-    description:
-      "A lighter summer beanie in sea-salt cotton-linen. This one has already found a home; a similar piece can be knit to order.",
-  },
-  {
-    slug: "drift-scarf",
-    name: "Drift Scarf",
+    slug: "ribbon-scarf",
+    name: "Ribbon Scarf",
     category: "scarves",
     price: 128,
     yarn: "Merino wool",
@@ -80,46 +49,47 @@ export const products: Product[] = [
     hex: "#F3E6D6",
     accent: "#D7C2A8",
     availability: "in-studio",
-    size: "180 cm × 28 cm",
+    size: "180 cm × 22 cm",
     care: "Hand wash cold, lay flat to dry",
     description:
-      "A long ribbed scarf with a quiet drape. Cream merino that layers over coats without feeling bulky at the neck.",
+      "A long, narrow scarf with a ribbon drape. Cream merino that layers over coats without feeling bulky at the neck.",
     featured: true,
   },
   {
-    slug: "evening-wrap",
-    name: "Evening Wrap",
-    category: "scarves",
-    price: 148,
-    yarn: "Baby alpaca",
-    colorName: "Charcoal rose",
-    hex: "#6B4A4A",
-    accent: "#3F2A2A",
-    availability: "made-to-order",
-    leadTime: "About three weeks",
-    size: "200 cm × 40 cm",
-    care: "Hand wash cold, lay flat to dry",
-    description:
-      "A wider wrap in baby alpaca, knit in a slow garter so the edges stay wavy and the fabric feels almost weightless.",
-  },
-  {
-    slug: "pocket-scarf",
-    name: "Pocket Scarf",
-    category: "scarves",
-    price: 138,
+    slug: "petal-headband",
+    name: "Petal Headband",
+    category: "headbands",
+    price: 42,
     yarn: "Merino wool",
-    colorName: "Clay",
-    hex: "#C9896A",
-    accent: "#9A5A3E",
+    colorName: "Blush",
+    hex: "#E8B8A8",
+    accent: "#C97C72",
     availability: "in-studio",
-    size: "160 cm × 22 cm, hidden pocket at one end",
+    size: "Adult, one size with a little give",
     care: "Hand wash cold, lay flat to dry",
     description:
-      "A narrower scarf with a hidden pocket for keys or a charm. Knit in clay merino with a firm edge so it holds its line.",
+      "A soft headband with a petal overlap at the front. Knit or crochet to order in blush merino.",
+    featured: true,
   },
   {
-    slug: "petal-charm",
-    name: "Petal Charm",
+    slug: "mini-bloom-beanie-charm",
+    name: "Mini Bloom Beanie Charm",
+    category: "charms",
+    price: 24,
+    yarn: "Leftover merino",
+    colorName: "Oatmeal",
+    hex: "#E6D3B8",
+    accent: "#C4A882",
+    availability: "in-studio",
+    size: "About 3 cm, with a metal clasp",
+    care: "Spot clean only",
+    description:
+      "A tiny Bloom Beanie for keys or a bag. Made from leftover merino so each one is a slightly different oatmeal.",
+    featured: true,
+  },
+  {
+    slug: "signature-flower-charm",
+    name: "Signature Flower Charm",
     category: "charms",
     price: 28,
     yarn: "Leftover merino",
@@ -130,39 +100,8 @@ export const products: Product[] = [
     size: "About 4 cm across, with a metal clasp",
     care: "Spot clean only",
     description:
-      "A tiny six-petal flower, the same mark as the studio seal. Clips to a beanie, bag, or keys.",
+      "The six-petal Seljan flower, as a charm. Clips to keys, a bag, or the Bloom Beanie itself.",
     featured: true,
-  },
-  {
-    slug: "heart-charm",
-    name: "Heart Charm",
-    category: "charms",
-    price: 24,
-    yarn: "Leftover merino",
-    colorName: "Blush",
-    hex: "#E8B8A8",
-    accent: "#C97C72",
-    availability: "in-studio",
-    size: "About 3 cm, with a metal clasp",
-    care: "Spot clean only",
-    description:
-      "A small stuffed heart in blush merino. Made from leftover yarn so each one is a slightly different pink.",
-  },
-  {
-    slug: "stitch-marker-set",
-    name: "Stitch Marker Set",
-    category: "charms",
-    price: 32,
-    yarn: "Cotton thread over brass",
-    colorName: "Mixed studio colors",
-    hex: "#D4B896",
-    accent: "#8F3A36",
-    availability: "made-to-order",
-    leadTime: "About one week",
-    size: "Set of six, ring diameter 8 mm",
-    care: "Wipe dry if needed",
-    description:
-      "Six wrapped stitch markers in the studio palette. For knitters who want a little Seljan on the needles.",
   },
 ];
 
@@ -190,14 +129,18 @@ export function featuredProducts() {
 export const categoryCopy: Record<Category, { title: string; line: string }> = {
   beanies: {
     title: "Bloom Beanie",
-    line: "Ribbed brims, soft crowns, made to sit through a whole winter.",
+    line: "The studio beanie — slouch crown, flower at the brim.",
   },
   scarves: {
     title: "Ribbon Scarf",
-    line: "Long ribs, light wraps, and one with a hidden pocket.",
+    line: "Long, narrow, meant to move with a coat.",
+  },
+  headbands: {
+    title: "Petal Headband",
+    line: "A soft band with a petal overlap at the front.",
   },
   charms: {
     title: "Charms",
-    line: "Small knitted marks for keys, a bag, or the needles.",
+    line: "Mini Bloom Beanie and the Signature Flower, for keys or a bag.",
   },
 };

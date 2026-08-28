@@ -24,8 +24,8 @@ export default function HomePage() {
             Soft, but not sweet.
           </h1>
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-primary/70 sm:text-base">
-            Bloom beanies, ribbon scarves, charms. Knit and crochet in small
-            batches — the piece that does the outfit.
+            Bloom Beanie, Ribbon Scarf, Petal Headband, and charms. Knit and
+            crochet in small batches — the piece that does the outfit.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/shop" className={cn(buttonVariants({ size: "lg" }), btn)}>
@@ -50,12 +50,13 @@ export default function HomePage() {
 
       <KnitTicker />
 
-      <section className="mx-auto grid max-w-6xl gap-0 border-t border-primary/15 px-4 sm:grid-cols-3 sm:px-6">
+      <section className="mx-auto grid max-w-6xl gap-0 border-t border-primary/15 px-4 sm:grid-cols-2 lg:grid-cols-4 sm:px-6">
         {(
           [
             ["beanies", categoryCopy.beanies, "01"],
             ["scarves", categoryCopy.scarves, "02"],
-            ["charms", categoryCopy.charms, "03"],
+            ["headbands", categoryCopy.headbands, "03"],
+            ["charms", categoryCopy.charms, "04"],
           ] as const
         ).map(([slug, copy, index]) => (
           <Link
@@ -88,7 +89,7 @@ export default function HomePage() {
             See all
           </Link>
         </div>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
           {featured.map((product) => (
             <ProductCard key={product.slug} product={product} />
           ))}

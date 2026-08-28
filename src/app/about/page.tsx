@@ -19,8 +19,8 @@ export default function AboutPage() {
         <div className="space-y-5 text-sm leading-relaxed text-primary/80 sm:text-base">
           <p>
             Seljan is a handmade knit and crochet studio for accessories you
-            actually wear: beanies for cold mornings, scarves that drape without
-            bulk, and small charms that clip onto keys or a bag.
+            actually wear: the Bloom Beanie, Ribbon Scarf, Petal Headband, and
+            small charms that clip onto keys or a bag.
           </p>
           <p>
             Pieces are knit in small batches, often from leftover cones so the
