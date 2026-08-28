@@ -331,72 +331,13 @@ body {
   animation: rise-in 0.9s ease-out both;
 }
 
-.yarn-row-art {
-  animation: yarn-row-settle 9s ease-in-out infinite;
-  transform-origin: 220px 188px;
-  transform-box: fill-box;
-}
-
-.yarn-carrier-path {
-  animation: yarn-walk 8.5s ease-in-out infinite;
-}
-
-.yarn-carrier-bob {
-  animation: yarn-bob 0.55s ease-in-out infinite;
-  transform-origin: 52px 150px;
-  transform-box: fill-box;
-}
-
-@keyframes yarn-walk {
-  0% {
-    transform: translateX(-8px) rotate(-2deg);
-  }
-  28% {
-    transform: translateX(72px) rotate(1deg);
-  }
-  42%,
-  62% {
-    transform: translateX(88px) rotate(0deg);
-  }
-  100% {
-    transform: translateX(-8px) rotate(-2deg);
-  }
-}
-
-@keyframes yarn-bob {
-  0%,
-  100% {
-    transform: translateY(0) rotate(-1.2deg);
-  }
-  50% {
-    transform: translateY(-7px) rotate(1.6deg);
-  }
-}
-
-@keyframes yarn-row-settle {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-3px);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .site-grain,
   .animate-flower-turn,
   .animate-flower-float,
   .animate-marquee,
   .animate-rise,
-  .flower-fall,
-  .yarn-row-art,
-  .yarn-carrier-path,
-  .yarn-carrier-bob {
+  .flower-fall {
     animation: none;
-  }
-
-  .yarn-carrier-path {
-    transform: translateX(80px);
   }
 }
