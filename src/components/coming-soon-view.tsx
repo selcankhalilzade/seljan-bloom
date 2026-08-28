@@ -6,7 +6,7 @@ import { WaitlistForm } from "@/components/waitlist-form";
 export function ComingSoonView() {
   return (
     <div>
-      <section className="mx-auto flex max-w-6xl flex-col px-4 py-16 sm:px-6 sm:py-24 md:flex-row md:items-center md:justify-between md:gap-10 lg:gap-16">
+      <section className="mx-auto flex max-w-6xl flex-col px-4 py-16 sm:px-6 sm:py-24 md:flex-row md:items-end md:justify-between md:gap-10 lg:gap-16">
         <div className="animate-rise max-w-xl">
           <div className="mb-8 flex items-center gap-3 text-primary">
             <BloomFlower className="animate-flower-turn size-10 sm:size-12" />
@@ -23,7 +23,7 @@ export function ComingSoonView() {
           <WaitlistForm />
         </div>
         <div className="mt-12 flex flex-col items-center md:mt-0 md:items-end">
-          <p className="max-w-[14rem] translate-y-[5px] text-center text-[0.65rem] leading-relaxed tracking-[0.18em] text-primary/50 uppercase md:text-right">
+          <p className="max-w-[14rem] text-center text-[0.65rem] leading-relaxed tracking-[0.18em] text-primary/50 uppercase md:text-right">
             Knit slowly.
             <br />
             Crochet accessories.
