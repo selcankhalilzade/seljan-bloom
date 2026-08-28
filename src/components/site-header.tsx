@@ -16,8 +16,8 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-primary/10 bg-background/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link href="/" className="flex items-center gap-2 text-primary">
-          <Wordmark className="text-[2rem] sm:text-[2.15rem]" />
           <FlowerMark className="size-9 animate-flower-turn sm:size-10" />
+          <Wordmark className="text-[2rem] sm:text-[2.15rem]" />
           <span className="sr-only">Seljan home</span>
         </Link>
 
