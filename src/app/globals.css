@@ -355,12 +355,17 @@ body {
 }
 
 .scarf-drape {
-  transform-origin: 120px 96px;
+  transform-origin: 140px 100px;
   animation: scarf-sway 4.8s ease-in-out infinite;
 }
 
-.scarf-pool {
-  animation: scarf-pool 18s ease-in-out infinite;
+.yarn-feed {
+  animation: yarn-feed 18s ease-in-out infinite;
+}
+
+.yarn-ball {
+  transform-origin: 0px 0px;
+  animation: yarn-breathe 5s ease-in-out infinite;
 }
 
 @keyframes knit-needle-a {
@@ -395,16 +400,36 @@ body {
 
 @keyframes scarf-reveal {
   0% {
-    height: 40px;
+    height: 48px;
   }
   62% {
-    height: 360px;
+    height: 210px;
   }
   86% {
-    height: 360px;
+    height: 210px;
   }
   100% {
-    height: 40px;
+    height: 48px;
+  }
+}
+
+@keyframes yarn-feed {
+  0%,
+  100% {
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dashoffset: 14;
+  }
+}
+
+@keyframes yarn-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
   }
 }
 
@@ -415,35 +440,6 @@ body {
   }
   50% {
     transform: rotate(1.6deg);
-  }
-}
-
-.yarn-feed {
-  animation: yarn-feed 18s ease-in-out infinite;
-}
-
-.yarn-loose {
-  transform-origin: 38px 500px;
-  animation: yarn-breathe 5s ease-in-out infinite;
-}
-
-@keyframes yarn-feed {
-  0%,
-  100% {
-    stroke-dashoffset: 0;
-  }
-  50% {
-    stroke-dashoffset: 18;
-  }
-}
-
-@keyframes yarn-breathe {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-3px);
   }
 }
 
@@ -459,17 +455,12 @@ body {
   .knit-yarn-loop,
   .scarf-reveal,
   .scarf-drape,
-  .scarf-pool,
   .yarn-feed,
-  .yarn-loose {
+  .yarn-ball {
     animation: none;
   }
 
   .scarf-reveal {
-    height: 360px;
-  }
-
-  .scarf-pool {
-    opacity: 1;
+    height: 210px;
   }
 }
