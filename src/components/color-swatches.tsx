@@ -1,9 +1,6 @@
 "use client";
 
-import { useState } from "react";
-
-import { ProductVisual } from "@/components/product-visual";
-import type { ColorOption, Product } from "@/lib/products";
+import type { ColorOption } from "@/lib/products";
 import { cn } from "@/lib/utils";
 
 export function ColorSwatches({
@@ -16,7 +13,7 @@ export function ColorSwatches({
   onChange?: (color: ColorOption) => void;
 }) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap items-center gap-2.5">
       {colors.map((color) => {
         const selected = value === color.name;
         return (
@@ -28,43 +25,15 @@ export function ColorSwatches({
             aria-pressed={onChange ? selected : undefined}
             onClick={onChange ? () => onChange(color) : undefined}
             className={cn(
-              "size-5 rounded-full border border-primary/20",
+              "size-8 rounded-full border border-primary/25 transition-[transform,box-shadow]",
               selected && "ring-2 ring-primary ring-offset-2 ring-offset-background",
-              !onChange && "pointer-events-none",
+              onChange && "cursor-pointer hover:scale-105",
+              !onChange && "pointer-events-none size-5",
             )}
             style={{ backgroundColor: color.hex }}
           />
         );
       })}
-    </div>
-  );
-}
-
-export function ProductGallery({ product }: { product: Product }) {
-  const palette = product.colors ?? [];
-  const [color, setColor] = useState<ColorOption | undefined>(palette[0]);
-
-  return (
-    <div>
-      <div className="group overflow-hidden border border-primary/10">
-        <ProductVisual
-          product={product}
-          color={color}
-          className="relative aspect-[4/5] w-full"
-        />
-      </div>
-      {palette.length > 0 ? (
-        <div className="mt-4 space-y-2">
-          <p className="text-[0.65rem] tracking-[0.2em] text-primary/50 uppercase">
-            {color?.name}
-          </p>
-          <ColorSwatches
-            colors={palette}
-            value={color?.name}
-            onChange={setColor}
-          />
-        </div>
-      ) : null}
     </div>
   );
 }

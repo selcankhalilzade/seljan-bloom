@@ -10,7 +10,10 @@ import { Textarea } from "@/components/ui/textarea";
 
 export function ContactForm() {
   const searchParams = useSearchParams();
-  const piece = searchParams.get("piece") ?? "";
+  const pieceName = searchParams.get("piece") ?? "";
+  const color = searchParams.get("color");
+  const piece =
+    pieceName && color ? `${pieceName} — ${color}` : pieceName;
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
     "idle",
   );
