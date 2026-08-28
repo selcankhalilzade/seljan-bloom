@@ -193,6 +193,10 @@
   .band-oxblood image[href="/brand/flower.png"] {
     filter: brightness(0) invert(0.94);
   }
+  .palette-invert footer.band-oxblood img[src="/brand/flower.png"],
+  .palette-invert footer.band-oxblood image[href="/brand/flower.png"] {
+    filter: none;
+  }
   .vibe-studio .font-display {
     font-style: normal;
   }
